@@ -18,6 +18,7 @@
 *.bin
 *.patch
 *.cfgtmp
+*.log
 
 # host programs on Cygwin
 *.exe
@@ -40,6 +41,9 @@
 !.gitignore
 !.gitattributes
 !.mailmap
+!.travis.yml
+!codecov.yml
+!unitrzlib.a
 
 #
 # Generated files

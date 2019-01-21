@@ -23,8 +23,7 @@ structure in more detail.
 |-- third-party             - Third-party software components
 |-- tools                   - Used tools
 |-- copying.txt             - Licence file
-|-- README                  - Change log file
-\-- rkh.chm                 - Reference manual
+\-- README                  - Change log file
 \endcode
 <STRONG> Figure 1 Top level directories </STRONG>
 
@@ -81,8 +80,7 @@ have its own test cases, which are included in corresponding directory within
 |-- third-party                     - Third-party software components
 |-- tools                           - Used tools
 |-- copying.txt                     - Licence file
-|-- README                          - Change log file
-\-- rkh.chm                         - Reference manual
+\-- README                          - Change log file
 \endcode
 <STRONG> Figure 2 RKH source directory </STRONG>
 
@@ -214,8 +212,7 @@ The following figure shows the \c source/portable/ directory.
     |-- third-party
     |-- tools
     |-- copying.txt
-    |-- README
-    \-- rkh.chm
+    \-- README
 \endcode
 <STRONG> Figure 3 RKH portable directory </STRONG>
 
@@ -363,8 +360,7 @@ performance in a substantial manner.
     |-- third-party
     |-- tools
     |-- copying.txt
-    |-- README
-    \-- rkh.chm
+    \-- README
 \endcode
 <STRONG> Figure 4 Demo application directories </STRONG>
 
@@ -4279,6 +4275,20 @@ Back: \ref cfg "Configuring framework RKH"
 		<TD></TD>
 		<TD> RKH_ENABLED </TD>
 		<TD align="left"> \copybrief RKH_CFG_FWK_ASSERT_EN </TD>
+	</TR>
+	<TR bgColor="#f0f0f0" align="center" valign="middle" >
+		<TD align="left"> #RKH_CFG_FWK_PUBSUB_EN </TD>
+		<TD> boolean </TD>
+		<TD></TD>
+		<TD> RKH_ENABLED </TD>
+		<TD align="left"> \copybrief RKH_CFG_FWK_PUBSUB_EN </TD>
+	</TR>
+	<TR bgColor="#f0f0f0" align="center" valign="middle" >
+		<TD align="left"> #RKH_CFG_FWK_MAX_SUBS_CHANNELS </TD>
+		<TD> integer </TD>
+		<TD> [1..128] </TD>
+		<TD> 16 </TD>
+		<TD align="left"> \copybrief RKH_CFG_FWK_MAX_SUBS_CHANNELS </TD>
 	</TR>
 	<TR bgColor="#c8cedc" align="center" valign="middle" >
 		<TD align="left"> #RKH_CFG_HOOK_DISPATCH_EN </TD>

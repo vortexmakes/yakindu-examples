@@ -70,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\example1.c" />
     <ClCompile Include="..\..\..\example1Act.c" />
+    <ClCompile Include="..\..\..\..\rkh\source\fwk\src\rkhfwk_rdygrp.c">
+      <Filter>rkh</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="rkh">
