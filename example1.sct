@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_SiiroBtKEemW57MOcwnmSw" specification="@EventDriven&#xA;@ChildFirstExecution&#xA;&#xA;interface:&#xA;&#x9;in event evA&#xA;&#x9;in event evB&#xA;&#x9;operation effect1()&#xA;&#x9;operation effect2()&#xA;&#x9;operation effect3()&#xA;    operation isCond() : boolean&#xA;    operation enS1()&#xA;    operation exS1()&#xA;    operation enS2()&#xA;    operation exS2()&#xA;    operation enS21()&#xA;    operation exS22()&#xA;    operation init()&#xA;    operation initS2()" name="example1" documentation="* The names of actions and states are mereley demostrative&#xD;&#xA;* The guard conditions are given by a function call (isCond())&#xD;&#xA;* The state machine 'example1' represents the behaviour of an active object (is also called example1). &#xD;&#xA;* The active object and its state machine are specified in file example1.h and they are implemented in example1.c file.&#xD;&#xA;* The state machine's actions are specified in file example1Act.h and they are implemented in file example1Act.c&#xD;&#xA;">
+  <sgraph:Statechart xmi:id="_SiiroBtKEemW57MOcwnmSw" specification="@EventDriven&#xA;@ChildFirstExecution&#xA;&#xA;interface:&#xA;&#x9;in event evA&#xA;&#x9;in event evB&#xA;&#x9;operation effect1()&#xA;&#x9;operation effect2()&#xA;&#x9;operation effect3()&#xA;    operation isCond() : boolean&#xA;    operation enS1()&#xA;    operation exS1()&#xA;    operation enS2()&#xA;    operation exS2()&#xA;    operation enS21()&#xA;    operation exS22()&#xA;    operation init()&#xA;    operation initS2()" name="example1">
     <regions xmi:id="_SijSuRtKEemW57MOcwnmSw" name="main region">
       <vertices xsi:type="sgraph:Entry" xmi:id="_Sikg0RtKEemW57MOcwnmSw">
         <outgoingTransitions xmi:id="_SimWAxtKEemW57MOcwnmSw" specification="/ init()" target="_SilH5BtKEemW57MOcwnmSw"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_SilH5BtKEemW57MOcwnmSw" specification="entry / enS1()&#xD;&#xA;exit / exS1()" name="S1" incomingTransitions="_SimWAxtKEemW57MOcwnmSw">
+      <vertices xsi:type="sgraph:State" xmi:id="_SilH5BtKEemW57MOcwnmSw" specification="entry / enS1()&#xD;&#xA;exit / exS1()" name="S1" incomingTransitions="_SimWAxtKEemW57MOcwnmSw _IhHv8B49EemW57MOcwnmSw">
         <outgoingTransitions xmi:id="_Ii-GEBv4EemBw6LuDSjW-g" specification="evA / effect1()" target="_gZIA8BtKEemW57MOcwnmSw"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_gZIA8BtKEemW57MOcwnmSw" specification="entry / enS2()&#xD;&#xA;exit / exS2()" name="S2" incomingTransitions="_Ii-GEBv4EemBw6LuDSjW-g">
+        <outgoingTransitions xmi:id="_IhHv8B49EemW57MOcwnmSw" specification="evB" target="_SilH5BtKEemW57MOcwnmSw"/>
         <regions xmi:id="_hDd-cBtKEemW57MOcwnmSw" name="rS2">
           <vertices xsi:type="sgraph:State" xmi:id="_lylY8BtKEemW57MOcwnmSw" specification="entry / enS21()&#xD;&#xA;&#xD;&#xA;evB / effect3()" name="S21" incomingTransitions="_GJtIoBv4EemBw6LuDSjW-g _wcsVYB1yEemW57MOcwnmSw">
             <outgoingTransitions xmi:id="_oPJj8Bv4EemBw6LuDSjW-g" specification="evA[isCond() == true] / effect2()" target="_aHEO8Bv4EemBw6LuDSjW-g"/>
@@ -203,6 +204,17 @@
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_wc2GYh1yEemW57MOcwnmSw" points="[-12, 11, 187, 12]$[-191, 11, 8, 12]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_wc2GZx1yEemW57MOcwnmSw" id="(0.08904109589041095,0.4403028538147933)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_wc2GaB1yEemW57MOcwnmSw" id="(0.9432624113475178,0.4339622641509434)"/>
+    </edges>
+    <edges xmi:id="_IhJlIB49EemW57MOcwnmSw" type="Transition" element="_IhHv8B49EemW57MOcwnmSw" source="_gZIoABtKEemW57MOcwnmSw" target="_Silu8RtKEemW57MOcwnmSw">
+      <children xsi:type="notation:DecorationNode" xmi:id="_IhKMMR49EemW57MOcwnmSw" type="TransitionExpression">
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_IhKMMh49EemW57MOcwnmSw"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_IhKMMx49EemW57MOcwnmSw" y="10"/>
+      </children>
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_IhJlIR49EemW57MOcwnmSw" routing="Rectilinear" lineColor="4210752"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_IhKMMB49EemW57MOcwnmSw" fontName="Verdana"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_IhJlIh49EemW57MOcwnmSw" points="[2, -40, 2, -40]$[2, -40, 2, -40]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_IhLaUB49EemW57MOcwnmSw" id="(0.4203152364273205,0.04296875)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_IhLaUR49EemW57MOcwnmSw" id="(0.865546218487395,0.31746031746031744)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>

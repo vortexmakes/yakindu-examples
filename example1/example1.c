@@ -31,6 +31,7 @@ RKH_CREATE_COMP_REGION_STATE(S2, example1_enS2, example1_exS2, RKH_ROOT, &S21,
                              example1_initS2,
                              RKH_NO_HISTORY, NULL, NULL, NULL, NULL);
 RKH_CREATE_TRANS_TABLE(S2)
+    RKH_TRREG(evB, NULL, NULL, &S1),
 RKH_END_TRANS_TABLE
 
 RKH_CREATE_BASIC_STATE(S21, example1_enS21, NULL, &S2, NULL);
