@@ -15,7 +15,7 @@
 
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
-#include "rkh.h"
+#include "rkhsma.h"
 #include "signal.h"
 #include "example1.h"
 #include "example1Act.h"
@@ -44,18 +44,18 @@ example1_init(Example1 *const me)
     RKH_TR_FWK_SIG(evA);
     RKH_TR_FWK_SIG(evB);
 #if 1
-    RKH_TR_FWK_FUN(example1_init, "init");
-    RKH_TR_FWK_FUN(example1_initS2, "initS2");
-    RKH_TR_FWK_FUN(example1_effect1, "effect1");
-    RKH_TR_FWK_FUN(example1_effect2, "effect2");
-    RKH_TR_FWK_FUN(example1_effect3, "effect3");
-    RKH_TR_FWK_FUN(example1_enS1, "enS1");
-    RKH_TR_FWK_FUN(example1_enS2, "enS2");
-    RKH_TR_FWK_FUN(example1_enS21, "enS21");
-    RKH_TR_FWK_FUN(example1_exS1, "exS1");
-    RKH_TR_FWK_FUN(example1_exS2, "exS2");
-    RKH_TR_FWK_FUN(example1_exS22, "exS22");
-    RKH_TR_FWK_FUN(example1_isCond, "isCond");
+    RKH_TR_FWK_OBJ_NAME(example1_init, "init");
+    RKH_TR_FWK_OBJ_NAME(example1_initS2, "initS2");
+    RKH_TR_FWK_OBJ_NAME(example1_effect1, "effect1");
+    RKH_TR_FWK_OBJ_NAME(example1_effect2, "effect2");
+    RKH_TR_FWK_OBJ_NAME(example1_effect3, "effect3");
+    RKH_TR_FWK_OBJ_NAME(example1_enS1, "enS1");
+    RKH_TR_FWK_OBJ_NAME(example1_enS2, "enS2");
+    RKH_TR_FWK_OBJ_NAME(example1_enS21, "enS21");
+    RKH_TR_FWK_OBJ_NAME(example1_exS1, "exS1");
+    RKH_TR_FWK_OBJ_NAME(example1_exS2, "exS2");
+    RKH_TR_FWK_OBJ_NAME(example1_exS22, "exS22");
+    RKH_TR_FWK_OBJ_NAME(example1_isCond, "isCond");
 #endif
 }
 
