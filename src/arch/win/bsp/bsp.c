@@ -75,13 +75,13 @@ static RKH_ROM_STATIC_EVENT(evBObj, evB);
 static void
 printBanner(void)
 {
-    printf("Blinky: a very simple state machine example.\n\n");
+    printf("Example1: a very simple state machine example.\n\n");
     printf("RKH version      = %s\n", RKH_RELEASE);
     printf("Port version     = %s\n", rkhport_get_version());
     printf("Port description = %s\n\n", rkhport_get_desc());
     printf("Description: \n\n"
            "The goal of this demo application is to explain how to \n"
-           "represent a \"flat\" state machine and how to use the timer \n"
+           "represent a state machine and how to use the timer \n"
            "services using the RKH framework. To do that is proposed a \n"
            "very simple demo that use one state machine and one timer, \n"
            "which is shown and explained in the reference manual section \n"
