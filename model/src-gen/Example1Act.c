@@ -1,6 +1,6 @@
 /**
- *  \file       example1.c
- *  \brief      Active object implementation.
+ *  \file       Example1.c
+ *  \brief      Active object's action implementations.
  */
 
 /* -------------------------- Development history -------------------------- */
@@ -13,28 +13,33 @@
 
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
-#include "rkhsma.h"
+#include "rkh.h"
 #include "signal.h"
 #include "Example1.h"
 #include "Example1Act.h"
+#include "bsp.h"
+#include "Example1ActRequired.h"
 
 /* ----------------------------- Local macros ------------------------------ */
-/* ........................ States and pseudostates ........................ */
-RKH_CREATE_BASIC_STATE(S1 ,NULL ,NULL ,RKH_ROOT, NULL);
-
-
-
-
-/* ............................. Active object ............................. */
-RKH_SMA_CREATE(Example1, example1, 0, HCAL, &S1, NULL, NULL);
-RKH_SMA_DEF_PTR(example1);
-
 /* ------------------------------- Constants ------------------------------- */
-
 /* ---------------------------- Local data types --------------------------- */
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */
 /* ----------------------- Local function prototypes ----------------------- */
 /* ---------------------------- Local functions ---------------------------- */
+/* ............................ Effect actions ............................. */
+void Example1_initial(Example1 *const me) {
+	
+	RKH_TR_FWK_AO(me);
+	RKH_TR_FWK_QUEUE(&RKH_UPCAST(RKH_SMA_T, me)->equeue);
+	RKH_TR_FWK_STATE(me, &S1);
+#if 1
+	RKH_TR_FWK_FUN(Example1_initial, "initial");
+#endif
+}
+
+/* ............................. Entry actions ............................. */
+/* ............................. Exit actions .............................. */
+/* ................................ Guards ................................. */
 /* ---------------------------- Global functions --------------------------- */
 /* ------------------------------ End of file ------------------------------ */

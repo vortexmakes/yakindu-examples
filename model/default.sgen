@@ -1,0 +1,11 @@
+GeneratorModel for yakindu::c::rkh {
+
+	statechart example1 {
+
+		feature Outlet {
+			targetProject = "rkh-examples"
+			targetFolder = "src-gen"
+			libraryTargetFolder = "src"
+		}
+	}
+}
