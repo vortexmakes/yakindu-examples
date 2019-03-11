@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/project/org.eclipse.cdt.msvc.exe.debug.188627936/INCLUDE/delimiter=;
+environment/project/org.eclipse.cdt.msvc.exe.debug.188627936/INCLUDE/operation=replace
+environment/project/org.eclipse.cdt.msvc.exe.debug.188627936/INCLUDE/value=C\:\\Program Files (x86)\\Windows Kits\\10\\Include;C\:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.16299.0\\um\\gl;C\:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\Include
+environment/project/org.eclipse.cdt.msvc.exe.debug.188627936/LIB/delimiter=;
+environment/project/org.eclipse.cdt.msvc.exe.debug.188627936/LIB/operation=replace
+environment/project/org.eclipse.cdt.msvc.exe.debug.188627936/LIB/value=C\:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\Lib
+environment/project/org.eclipse.cdt.msvc.exe.debug.188627936/append=true
+environment/project/org.eclipse.cdt.msvc.exe.debug.188627936/appendContributed=true
