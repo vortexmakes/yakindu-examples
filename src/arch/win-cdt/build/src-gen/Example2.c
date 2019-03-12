@@ -1,56 +1,69 @@
 /**
- *  \file       example1.c
+ *  \file       example2.c
  *  \brief      Active object implementation.
  */
 
 /* -------------------------- Development history -------------------------- */
 /*
- *  2019.21.01  LeFr  v1.0.00  Initial version
  */
 
 /* -------------------------------- Authors -------------------------------- */
 /*
- *  LeFr  Leandro Francucci  francuccilea@gmail.com
  */
 
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
-#include "rkhdef.h"
 #include "rkhsma.h"
 #include "signal.h"
-#include "example1.h"
-#include "example1Act.h"
+#include "Example2.h"
+#include "Example2Act.h"
 
 /* ----------------------------- Local macros ------------------------------ */
 /* ........................ States and pseudostates ........................ */
-RKH_CREATE_BASIC_STATE(S1, example1_enS1, example1_exS1, RKH_ROOT, NULL);
-RKH_CREATE_TRANS_TABLE(S1)
-    RKH_TRREG(evA, NULL, example1_effect1, &S2),
+RKH_CREATE_BASIC_STATE(StateA ,Example2_enStateA ,Example2_exStateA ,RKH_ROOT, NULL);
+
+RKH_CREATE_BASIC_STATE(StateB ,NULL ,NULL ,RKH_ROOT, NULL);
+
+RKH_CREATE_BASIC_STATE(StateC ,Example2_enStateC ,NULL ,RKH_ROOT, NULL);
+
+RKH_CREATE_BASIC_STATE(StateD ,NULL ,NULL ,&CompState, NULL);
+
+RKH_CREATE_BASIC_STATE(StateE ,NULL ,NULL ,&CompState, NULL);
+
+
+RKH_CREATE_COMP_REGION_STATE(CompState ,Example2_enCompState ,Example2_exCompState ,RKH_ROOT, NULL, RKH_NO_HISTORY, NULL, NULL, NULL, NULL)
+
+
+RKH_CREATE_TRANS_TABLE(StateA)
+	RKH_TRREG(evB, NULL, NULL, &StateB),
+	RKH_TRCOMPLETION(NULL, NULL, &StateB),
+	RKH_TRINT(evA, NULL, Example2_StateAToStateALoc2),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_COMP_REGION_STATE(S2, example1_enS2, example1_exS2, RKH_ROOT, &S21, 
-                             example1_initS2,
-                             RKH_NO_HISTORY, NULL, NULL, NULL, NULL);
-RKH_CREATE_TRANS_TABLE(S2)
-    RKH_TRREG(evB, NULL, NULL, &S1),
+RKH_CREATE_TRANS_TABLE(StateB)
+	RKH_TRREG(evA, NULL, Example2_StateBToStateCExt3, &StateC),
+	RKH_TRREG(evB, NULL, Example2_StateBToStateCExt3, &StateC),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_BASIC_STATE(S21, example1_enS21, NULL, &S2, NULL);
-RKH_CREATE_TRANS_TABLE(S21)
-    RKH_TRINT(evB, NULL, example1_effect3),
-    RKH_TRREG(evA, example1_isCond, example1_effect2, &S22),
+RKH_CREATE_TRANS_TABLE(StateC)
+	RKH_TRREG(evA, Example2_isCondStateCToCompState4, NULL, &CompState),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_BASIC_STATE(S22, NULL, example1_exS22, &S2, NULL);
-RKH_CREATE_TRANS_TABLE(S22)
-    RKH_TRREG(evA, NULL, NULL, &S21),
+RKH_CREATE_TRANS_TABLE(CompState)
+	RKH_TRREG(evB, NULL, Example2_CompStateToStateCExt5, &StateC),
 RKH_END_TRANS_TABLE
+
+RKH_CREATE_TRANS_TABLE(StateD)
+	RKH_TRREG(evA, NULL, NULL, &StateE),
+RKH_END_TRANS_TABLE
+
 
 /* ............................. Active object ............................. */
-RKH_SMA_CREATE(Example1, example1, 0, HCAL, &S1, example1_init, NULL);
-RKH_SMA_DEF_PTR(example1);
+RKH_SMA_CREATE(Example2, example2, 0, HCAL, &StateA, Example2_ToStateAExt0, NULL);
+RKH_SMA_DEF_PTR(example2);
 
 /* ------------------------------- Constants ------------------------------- */
+
 /* ---------------------------- Local data types --------------------------- */
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */

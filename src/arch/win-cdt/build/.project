@@ -52,32 +52,17 @@
 			<locationURI>PARENT-3-PROJECT_LOC/event.h</locationURI>
 		</link>
 		<link>
-			<name>example1.c</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/example1.c</locationURI>
-		</link>
-		<link>
-			<name>example1.h</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/example1.h</locationURI>
-		</link>
-		<link>
-			<name>example1Act.c</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/example1Act.c</locationURI>
-		</link>
-		<link>
-			<name>example1Act.h</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/example1Act.h</locationURI>
-		</link>
-		<link>
 			<name>main.c</name>
 			<type>1</type>
 			<locationURI>PARENT-3-PROJECT_LOC/main.c</locationURI>
 		</link>
 		<link>
 			<name>model</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>rkh</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
@@ -92,7 +77,7 @@
 			<locationURI>PARENT-3-PROJECT_LOC/signal.h</locationURI>
 		</link>
 		<link>
-			<name>source</name>
+			<name>src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
@@ -102,54 +87,59 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>model/default.sgen</name>
+			<name>model/example2.sct</name>
 			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/model/default.sgen</locationURI>
+			<locationURI>PARENT-4-PROJECT_LOC/model/example2.sct</locationURI>
 		</link>
 		<link>
-			<name>model/example1.sct</name>
+			<name>model/example2.sgen</name>
 			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/model/example1.sct</locationURI>
+			<locationURI>PARENT-4-PROJECT_LOC/model/example2.sgen</locationURI>
 		</link>
 		<link>
-			<name>source/fwk</name>
+			<name>rkh/fwk</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/mempool</name>
+			<name>rkh/mempool</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/portable</name>
+			<name>rkh/portable</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/queue</name>
+			<name>rkh/queue</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/sm</name>
+			<name>rkh/sm</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/sma</name>
+			<name>rkh/sma</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/tmr</name>
+			<name>rkh/tmr</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/trc</name>
+			<name>rkh/trc</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/Example2ActRequired.c</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Example2ActRequired.c</locationURI>
 		</link>
 		<link>
 			<name>arch/win-cdt/bsp</name>
@@ -162,42 +152,42 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/fwk/src</name>
+			<name>rkh/fwk/src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/mempool/src</name>
+			<name>rkh/mempool/src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/portable/test</name>
+			<name>rkh/portable/test</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/queue/src</name>
+			<name>rkh/queue/src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/sm/src</name>
+			<name>rkh/sm/src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/sma/src</name>
+			<name>rkh/sma/src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/tmr/src</name>
+			<name>rkh/tmr/src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>source/trc/src</name>
+			<name>rkh/trc/src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
@@ -247,102 +237,102 @@
 			<locationURI>PROJECT_LOC/.project</locationURI>
 		</link>
 		<link>
-			<name>source/fwk/src/rkhfwk_bittbl.c</name>
+			<name>rkh/fwk/src/rkhfwk_bittbl.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/fwk/src/rkhfwk_bittbl.c</locationURI>
 		</link>
 		<link>
-			<name>source/fwk/src/rkhfwk_dynevt.c</name>
+			<name>rkh/fwk/src/rkhfwk_dynevt.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/fwk/src/rkhfwk_dynevt.c</locationURI>
 		</link>
 		<link>
-			<name>source/fwk/src/rkhfwk_evtpool.c</name>
+			<name>rkh/fwk/src/rkhfwk_evtpool.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/fwk/src/rkhfwk_evtpool.c</locationURI>
 		</link>
 		<link>
-			<name>source/fwk/src/rkhfwk_pubsub.c</name>
+			<name>rkh/fwk/src/rkhfwk_pubsub.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/fwk/src/rkhfwk_pubsub.c</locationURI>
 		</link>
 		<link>
-			<name>source/fwk/src/rkhfwk_rdygrp.c</name>
+			<name>rkh/fwk/src/rkhfwk_rdygrp.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/fwk/src/rkhfwk_rdygrp.c</locationURI>
 		</link>
 		<link>
-			<name>source/fwk/src/rkhfwk_sched.c</name>
+			<name>rkh/fwk/src/rkhfwk_sched.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/fwk/src/rkhfwk_sched.c</locationURI>
 		</link>
 		<link>
-			<name>source/fwk/src/rkhfwk_version.c</name>
+			<name>rkh/fwk/src/rkhfwk_version.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/fwk/src/rkhfwk_version.c</locationURI>
 		</link>
 		<link>
-			<name>source/mempool/src/rkhmempool.c</name>
+			<name>rkh/mempool/src/rkhmempool.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/mempool/src/rkhmempool.c</locationURI>
 		</link>
 		<link>
-			<name>source/portable/test/rkhport.c</name>
+			<name>rkh/portable/test/rkhport.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/portable/test/rkhport.c</locationURI>
 		</link>
 		<link>
-			<name>source/portable/test/rkhport.h</name>
+			<name>rkh/portable/test/rkhport.h</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/portable/test/rkhport.h</locationURI>
 		</link>
 		<link>
-			<name>source/portable/test/rkht.h</name>
+			<name>rkh/portable/test/rkht.h</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/portable/test/rkht.h</locationURI>
 		</link>
 		<link>
-			<name>source/queue/src/rkhqueue.c</name>
+			<name>rkh/queue/src/rkhqueue.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/queue/src/rkhqueue.c</locationURI>
 		</link>
 		<link>
-			<name>source/sm/src/rkhsm.c</name>
+			<name>rkh/sm/src/rkhsm.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/sm/src/rkhsm.c</locationURI>
 		</link>
 		<link>
-			<name>source/sma/src/rkhsma.c</name>
+			<name>rkh/sma/src/rkhsma.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/sma/src/rkhsma.c</locationURI>
 		</link>
 		<link>
-			<name>source/sma/src/rkhsma_prio.c</name>
+			<name>rkh/sma/src/rkhsma_prio.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/sma/src/rkhsma_prio.c</locationURI>
 		</link>
 		<link>
-			<name>source/sma/src/rkhsma_sync.c</name>
+			<name>rkh/sma/src/rkhsma_sync.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/sma/src/rkhsma_sync.c</locationURI>
 		</link>
 		<link>
-			<name>source/tmr/src/rkhtmr.c</name>
+			<name>rkh/tmr/src/rkhtmr.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/tmr/src/rkhtmr.c</locationURI>
 		</link>
 		<link>
-			<name>source/trc/src/rkhtrc_filter.c</name>
+			<name>rkh/trc/src/rkhtrc_filter.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/trc/src/rkhtrc_filter.c</locationURI>
 		</link>
 		<link>
-			<name>source/trc/src/rkhtrc_record.c</name>
+			<name>rkh/trc/src/rkhtrc_record.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/trc/src/rkhtrc_record.c</locationURI>
 		</link>
 		<link>
-			<name>source/trc/src/rkhtrc_stream.c</name>
+			<name>rkh/trc/src/rkhtrc_stream.c</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/rkh/source/trc/src/rkhtrc_stream.c</locationURI>
 		</link>

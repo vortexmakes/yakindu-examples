@@ -1,47 +1,48 @@
 /**
- *  \file       main.c
- *  \brief      Example application.
+ *  \file       Example2ActRequired.c
+ *  \brief      This file implements the required operations for Example2 
+ *              active object.
  */
 
 /* -------------------------- Development history -------------------------- */
 /*
- *  2016.03.17  LeFr  v1.0.00  Initial version
- *  2019.21.01  LeFr  v1.0.00  Adapted to Yakindu example
  */
 
 /* -------------------------------- Authors -------------------------------- */
 /*
- *  LeFr  Leandro Francucci  francuccilea@gmail.com
  */
 
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
-#include "rkh.h"
-#include "Example2.h"
-#include "bsp.h"
-
+#include "rkhtype.h"
 
 /* ----------------------------- Local macros ------------------------------ */
-#define QSTO_SIZE           4
-
 /* ------------------------------- Constants ------------------------------- */
 /* ---------------------------- Local data types --------------------------- */
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */
-static RKH_EVT_T *qsto[QSTO_SIZE];
-
 /* ----------------------- Local function prototypes ----------------------- */
 /* ---------------------------- Local functions ---------------------------- */
 /* ---------------------------- Global functions --------------------------- */
-int
-main(int argc, char *argv[])
+void 
+simpleOp(void)
 {
-    bsp_init(argc, argv);
+}
 
-    RKH_SMA_ACTIVATE(example2, qsto, QSTO_SIZE, 0, 0);
-    rkh_fwk_enter();
+void 
+opWithParams(rInt i, rbool_t b)
+{
+}
 
-    RKH_TRC_CLOSE();
+rInt 
+opWithReturn()
+{
+    return 0;
+}
+
+rInt 
+opWithParamAndReturn(rInt i)
+{
     return 0;
 }
 
