@@ -1,5 +1,5 @@
 /**
- *  \file       Example2ActRequired.h
+ *  \file       ClockSignalActRequired.h
  *  \brief      Active object implementation.
  */
 
@@ -13,11 +13,10 @@
 
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
-#include "Example2ActAccess.h"
+#include "ClockSignalActAccess.h"
 
 /* -------------------------- Function prototypes -------------------------- */
-void simpleOp();
-void opWithParams(rInt i, rbool_t b);
-rInt opWithReturn();
-rInt opWithParamAndReturn(rInt i);
+void Init();
+void GetVIMeasures();
+void CalcVIAverages();
 /* ------------------------------ End of file ------------------------------ */

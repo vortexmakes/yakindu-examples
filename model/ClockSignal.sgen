@@ -1,0 +1,11 @@
+GeneratorModel for yakindu::c::rkh {
+
+	statechart ClockSignal {
+
+		feature Outlet {
+			targetProject = "example1"
+			targetFolder = "src-gen-ClockSignal"
+			libraryTargetFolder = "src-gen-ClockSignal"
+		}
+	}
+}

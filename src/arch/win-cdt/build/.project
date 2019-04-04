@@ -87,6 +87,36 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>model/ClockSignal.sct</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/ClockSignal.sct</locationURI>
+		</link>
+		<link>
+			<name>model/ClockSignal.sgen</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/ClockSignal.sgen</locationURI>
+		</link>
+		<link>
+			<name>model/FailSignal.sct</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/FailSignal.sct</locationURI>
+		</link>
+		<link>
+			<name>model/FailSignal.sgen</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/FailSignal.sgen</locationURI>
+		</link>
+		<link>
+			<name>model/SeqDigSignal.sct</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SeqDigSignal.sct</locationURI>
+		</link>
+		<link>
+			<name>model/SeqDigSignal.sgen</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SeqDigSignal.sgen</locationURI>
+		</link>
+		<link>
 			<name>model/example2.sct</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/model/example2.sct</locationURI>

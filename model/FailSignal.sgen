@@ -1,0 +1,11 @@
+GeneratorModel for yakindu::c::rkh {
+
+	statechart FailSignal {
+
+		feature Outlet {
+			targetProject = "example1"
+			targetFolder = "src-gen-FailSignal"
+			libraryTargetFolder = "src-gen-FailSignal"
+		}
+	}
+}
