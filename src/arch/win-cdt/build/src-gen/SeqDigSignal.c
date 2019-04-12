@@ -36,8 +36,6 @@ RKH_CREATE_BASIC_STATE(Seq5 ,NULL ,NULL ,RKH_ROOT, NULL);
 
 RKH_CREATE_BASIC_STATE(Failure ,NULL ,NULL ,RKH_ROOT, NULL);
 
-
-
 RKH_CREATE_TRANS_TABLE(Idle)
 RKH_TRREG(evIn1, NULL, SeqDigSignal_IdleToSeq0Ext1, &Seq0),
 RKH_TRREG(evIn2, NULL, NULL, &Seq2),
@@ -83,10 +81,9 @@ RKH_CREATE_TRANS_TABLE(Failure)
 RKH_TRCOMPLETION(NULL, NULL, &Idle),
 RKH_END_TRANS_TABLE
 
-
 /* ............................. Active object ............................. */
-RKH_SMA_CREATE(SeqDigSignal, SeqDigSignal, 0, HCAL, &Idle, SeqDigSignal_ToIdleExt0, NULL);
-RKH_SMA_DEF_PTR(SeqDigSignal);
+RKH_SMA_CREATE(SeqDigSignal, seqDigSignal, 0, HCAL, &Idle, SeqDigSignal_ToIdleExt0, NULL);
+RKH_SMA_DEF_PTR(seqDigSignal);
 
 /* ------------------------------- Constants ------------------------------- */
 

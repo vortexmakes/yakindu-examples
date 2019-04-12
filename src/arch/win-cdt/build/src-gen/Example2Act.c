@@ -25,6 +25,7 @@
 /* ---------------------------- Local data types --------------------------- */
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */
+static rInt foo = 0;
 /* ----------------------- Local function prototypes ----------------------- */
 /* ---------------------------- Local functions ---------------------------- */
 /* ............................ Effect actions ............................. */
@@ -46,18 +47,26 @@ Example2_ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 	RKH_TR_FWK_STATE(me, &StateE);
 	RKH_TR_FWK_SIG(evA);
 	RKH_TR_FWK_SIG(evB);
+	RKH_TR_FWK_SIG(evC);
 	#if 1
-		RKH_TR_FWK_OBJ_NAME(Example2_initial, "initial");
 		RKH_TR_FWK_OBJ_NAME(Example2_ToStateAExt0, "ToStateAExt0");
 		RKH_TR_FWK_OBJ_NAME(Example2_StateBToStateCExt3, "StateBToStateCExt3");
-		RKH_TR_FWK_OBJ_NAME(Example2_CompStateToStateCExt5, "CompStateToStateCExt5");
+		RKH_TR_FWK_OBJ_NAME(Example2_StateCToC1Ext6, "StateCToC1Ext6");
+		RKH_TR_FWK_OBJ_NAME(Example2_StateCToNULLExt7, "StateCToNULLExt7");
+		RKH_TR_FWK_OBJ_NAME(Example2_CompStateToStateCExt8, "CompStateToStateCExt8");
+		RKH_TR_FWK_OBJ_NAME(Example2_C0ToC1Ext13, "C0ToC1Ext13");
+		RKH_TR_FWK_OBJ_NAME(Example2_C1ToCompStateExt14, "C1ToCompStateExt14");
+		RKH_TR_FWK_OBJ_NAME(Example2_C1ToStateAExt15, "C1ToStateAExt15");
 		RKH_TR_FWK_OBJ_NAME(Example2_StateAToStateALoc2, "StateAToStateALoc2");
 		RKH_TR_FWK_OBJ_NAME(Example2_enStateA, "enStateA");
 		RKH_TR_FWK_OBJ_NAME(Example2_enStateC, "enStateC");
 		RKH_TR_FWK_OBJ_NAME(Example2_enCompState, "enCompState");
 		RKH_TR_FWK_OBJ_NAME(Example2_exStateA, "exStateA");
 		RKH_TR_FWK_OBJ_NAME(Example2_exCompState, "exCompState");
-		RKH_TR_FWK_OBJ_NAME(Example2_isCondStateCToCompState4, "isCondStateCToCompState4");
+		RKH_TR_FWK_OBJ_NAME(Example2_isCondStateCToCompState5, "isCondStateCToCompState5");
+		RKH_TR_FWK_OBJ_NAME(Example2_isCondC0ToStateC12, "isCondC0ToStateC12");
+		RKH_TR_FWK_OBJ_NAME(Example2_isCondC0ToC113, "isCondC0ToC113");
+		RKH_TR_FWK_OBJ_NAME(Example2_isCondC1ToCompState14, "isCondC1ToCompState14");
 	#endif
 	
 	simpleOp();
@@ -70,57 +79,106 @@ Example2_StateBToStateCExt3(Example2 *const me, RKH_EVT_T *pe)
 }
 
 void 
-Example2_CompStateToStateCExt5(Example2 *const me, RKH_EVT_T *pe)
+Example2_StateCToC1Ext6(Example2 *const me, RKH_EVT_T *pe)
+{
+	me->boolVar = false;
+}
+
+void 
+Example2_StateCToNULLExt7(Example2 *const me, RKH_EVT_T *pe)
+{
+	me->boolVar = true;
+}
+
+void 
+Example2_CompStateToStateCExt8(Example2 *const me, RKH_EVT_T *pe)
 {
 	simpleOp();
+}
+
+void 
+Example2_C0ToC1Ext13(Example2 *const me, RKH_EVT_T *pe)
+{
+	me->boolVar = true;
+}
+
+void 
+Example2_C1ToCompStateExt14(Example2 *const me, RKH_EVT_T *pe)
+{
+	me->intVar++;
+}
+
+void 
+Example2_C1ToStateAExt15(Example2 *const me, RKH_EVT_T *pe)
+{
+	me->intVar = 0;
 }
 
 void 
 Example2_StateAToStateALoc2(Example2 *const me, RKH_EVT_T *pe)
 {
 	simpleOp();
-	intVar++;
+	me->intVar++;
+	foo++;
 }
 
 /* ............................. Entry actions ............................. */
 void 
 Example2_enStateA(Example2 *const me)
 {
-	boolVar = false;
+	me->boolVar = false;
 }
 
 void 
 Example2_enStateC(Example2 *const me)
 {
-	intVar = opWithParamAndReturn(intVar);
-	intVar = opWithReturn();
-	opWithParams(intVar, boolVar);
+	me->intVar = opWithParamAndReturn(me->intVar);
+	me->intVar = opWithReturn();
+	opWithParams(me->intVar, me->boolVar);
 }
 
 void 
 Example2_enCompState(Example2 *const me)
 {
-	intVar++;
+	me->intVar++;
 }
 
 /* ............................. Exit actions .............................. */
 void 
 Example2_exStateA(Example2 *const me)
 {
-	intVar = 2;
+	me->intVar = 2;
 }
 
 void 
 Example2_exCompState(Example2 *const me)
 {
-	boolVar = true;
+	me->boolVar = true;
 }
 
 /* ................................ Guards ................................. */
 rbool_t 
-Example2_isCondStateCToCompState4(Example2 *const me, RKH_EVT_T *pe)
+Example2_isCondStateCToCompState5(Example2 *const me, RKH_EVT_T *pe)
 {
-	return ((intVar == 5)) ? true : false;
+	return ((me->intVar == 5)) ? true : false;
+}
+
+rbool_t 
+Example2_isCondC0ToStateC12(Example2 *const me, RKH_EVT_T *pe)
+{
+	return ((me->intVar == 0)) ? true : false;
+}
+
+rbool_t 
+Example2_isCondC0ToC113(Example2 *const me, RKH_EVT_T *pe)
+{
+	return ((me->intVar == 1)) ? true : false;
+}
+
+rbool_t 
+Example2_isCondC1ToCompState14(Example2 *const me, RKH_EVT_T *pe)
+{
+	return ((me->boolVar == false)) ? true : false;
 }
 
 /* ---------------------------- Global functions --------------------------- */

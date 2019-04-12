@@ -14,7 +14,7 @@ extern "C" {
 /* --------------------------------- Macros -------------------------------- */
 /* -------------------------------- Constants ------------------------------ */
 /* ........................ Declares active object ......................... */
-RKH_SMA_DCLR(SeqDigSignal);
+RKH_SMA_DCLR(seqDigSignal);
 
 /* ................... Declares states and pseudostates .................... */
 RKH_DCLR_BASIC_STATE Idle, Seq0, Seq1, Seq2, Seq3, Seq4, Seq5, Failure;

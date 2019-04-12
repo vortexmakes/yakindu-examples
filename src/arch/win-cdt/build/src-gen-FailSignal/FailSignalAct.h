@@ -33,10 +33,14 @@ extern "C" {
 /* -------------------------- Function prototypes -------------------------- */
 /* ........................ Declares effect actions ........................ */
 void FailSignal_ToIdleExt0(FailSignal *const me, RKH_EVT_T *pe);
+
 /* ......................... Declares entry actions ........................ */
 void FailSignal_enFailure(FailSignal *const me);
+
 /* ......................... Declares exit actions ......................... */
+
 /* ............................ Declares guards ............................ */
+
 /* -------------------- External C language linkage end -------------------- */
 #ifdef __cplusplus
 }

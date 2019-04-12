@@ -1,6 +1,6 @@
 /**
  *  \file       FailSignalActRequired.h
- *  \brief      Active object implementation.
+ *  \brief
  */
 
 /* -------------------------- Development history -------------------------- */
@@ -12,10 +12,33 @@
  */
 
 /* --------------------------------- Notes --------------------------------- */
+/* --------------------------------- Module -------------------------------- */
+#ifndef __FAILSIGNALACTREQUIRED_H__
+#define __FAILSIGNALACTREQUIRED_H__
+
 /* ----------------------------- Include files ----------------------------- */
+#include "rkhtype.h"
 #include "FailSignalActAccess.h"
 
+/* ---------------------- External C language linkage ---------------------- */
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
+/* --------------------------------- Macros -------------------------------- */
+/* -------------------------------- Constants ------------------------------ */
+/* ------------------------------- Data types ------------------------------ */
+/* -------------------------- External variables --------------------------- */
 /* -------------------------- Function prototypes -------------------------- */
-void Init();
-void MeasureFailure();
+void Init(void);
+void MeasureFailure(void);
+
+/* -------------------- External C language linkage end -------------------- */
+#ifdef __cplusplus
+}
+#endif
+
+/* ------------------------------ Module end ------------------------------- */
+#endif
+
 /* ------------------------------ End of file ------------------------------ */

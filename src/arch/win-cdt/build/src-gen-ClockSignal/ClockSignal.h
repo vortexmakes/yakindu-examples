@@ -14,7 +14,7 @@ extern "C" {
 /* --------------------------------- Macros -------------------------------- */
 /* -------------------------------- Constants ------------------------------ */
 /* ........................ Declares active object ......................... */
-RKH_SMA_DCLR(ClockSignal);
+RKH_SMA_DCLR(clockSignal);
 
 /* ................... Declares states and pseudostates .................... */
 RKH_DCLR_BASIC_STATE Idle, WaitFallEdge, WaitRisEdge;

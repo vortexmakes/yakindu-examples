@@ -14,7 +14,7 @@ extern "C" {
 /* --------------------------------- Macros -------------------------------- */
 /* -------------------------------- Constants ------------------------------ */
 /* ........................ Declares active object ......................... */
-RKH_SMA_DCLR(FailSignal);
+RKH_SMA_DCLR(failSignal);
 
 /* ................... Declares states and pseudostates .................... */
 RKH_DCLR_BASIC_STATE Idle, Success, Failure;

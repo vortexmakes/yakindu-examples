@@ -34,9 +34,13 @@ extern "C" {
 /* ........................ Declares effect actions ........................ */
 void ClockSignal_ToIdleExt0(ClockSignal *const me, RKH_EVT_T *pe);
 void ClockSignal_WaitFallEdgeToWaitRisEdgeExt3(ClockSignal *const me, RKH_EVT_T *pe);
+
 /* ......................... Declares entry actions ........................ */
+
 /* ......................... Declares exit actions ......................... */
+
 /* ............................ Declares guards ............................ */
+
 /* -------------------- External C language linkage end -------------------- */
 #ifdef __cplusplus
 }

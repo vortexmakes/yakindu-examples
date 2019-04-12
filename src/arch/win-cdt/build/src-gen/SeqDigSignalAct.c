@@ -46,7 +46,6 @@ SeqDigSignal_ToIdleExt0(SeqDigSignal *const me, RKH_EVT_T *pe)
 	RKH_TR_FWK_SIG(evIn1);
 	RKH_TR_FWK_SIG(evIn2);
 	#if 1
-		RKH_TR_FWK_OBJ_NAME(SeqDigSignal_initial, "initial");
 		RKH_TR_FWK_OBJ_NAME(SeqDigSignal_ToIdleExt0, "ToIdleExt0");
 		RKH_TR_FWK_OBJ_NAME(SeqDigSignal_IdleToSeq0Ext1, "IdleToSeq0Ext1");
 		RKH_TR_FWK_OBJ_NAME(SeqDigSignal_Seq0ToSeq1Ext3, "Seq0ToSeq1Ext3");

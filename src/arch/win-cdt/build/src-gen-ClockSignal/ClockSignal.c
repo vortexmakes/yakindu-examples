@@ -26,8 +26,6 @@ RKH_CREATE_BASIC_STATE(WaitFallEdge ,NULL ,NULL ,RKH_ROOT, NULL);
 
 RKH_CREATE_BASIC_STATE(WaitRisEdge ,NULL ,NULL ,RKH_ROOT, NULL);
 
-
-
 RKH_CREATE_TRANS_TABLE(Idle)
 RKH_TRREG(evClockHigh, NULL, NULL, &WaitFallEdge),
 RKH_TRREG(evClockLow, NULL, NULL, &WaitRisEdge),
@@ -41,10 +39,9 @@ RKH_CREATE_TRANS_TABLE(WaitRisEdge)
 RKH_TRREG(evClockHigh, NULL, NULL, &WaitFallEdge),
 RKH_END_TRANS_TABLE
 
-
 /* ............................. Active object ............................. */
-RKH_SMA_CREATE(ClockSignal, ClockSignal, 0, HCAL, &Idle, ClockSignal_ToIdleExt0, NULL);
-RKH_SMA_DEF_PTR(ClockSignal);
+RKH_SMA_CREATE(ClockSignal, clockSignal, 0, HCAL, &Idle, ClockSignal_ToIdleExt0, NULL);
+RKH_SMA_DEF_PTR(clockSignal);
 
 /* ------------------------------- Constants ------------------------------- */
 

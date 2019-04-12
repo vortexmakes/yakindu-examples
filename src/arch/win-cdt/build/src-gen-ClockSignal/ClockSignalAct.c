@@ -42,7 +42,6 @@ ClockSignal_ToIdleExt0(ClockSignal *const me, RKH_EVT_T *pe)
 	RKH_TR_FWK_SIG(evClockHigh);
 	RKH_TR_FWK_SIG(evClockLow);
 	#if 1
-		RKH_TR_FWK_OBJ_NAME(ClockSignal_initial, "initial");
 		RKH_TR_FWK_OBJ_NAME(ClockSignal_ToIdleExt0, "ToIdleExt0");
 		RKH_TR_FWK_OBJ_NAME(ClockSignal_WaitFallEdgeToWaitRisEdgeExt3, "WaitFallEdgeToWaitRisEdgeExt3");
 	#endif
@@ -53,7 +52,7 @@ ClockSignal_ToIdleExt0(ClockSignal *const me, RKH_EVT_T *pe)
 void 
 ClockSignal_WaitFallEdgeToWaitRisEdgeExt3(ClockSignal *const me, RKH_EVT_T *pe)
 {
-	SeqDigSignal_dispatch(currInput);
+	SeqDigSignal_dispatch(me->currInput);
 }
 
 /* ............................. Entry actions ............................. */

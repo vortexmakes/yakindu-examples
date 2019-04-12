@@ -35,9 +35,13 @@ extern "C" {
 void SeqDigSignal_ToIdleExt0(SeqDigSignal *const me, RKH_EVT_T *pe);
 void SeqDigSignal_IdleToSeq0Ext1(SeqDigSignal *const me, RKH_EVT_T *pe);
 void SeqDigSignal_Seq0ToSeq1Ext3(SeqDigSignal *const me, RKH_EVT_T *pe);
+
 /* ......................... Declares entry actions ........................ */
+
 /* ......................... Declares exit actions ......................... */
+
 /* ............................ Declares guards ............................ */
+
 /* -------------------- External C language linkage end -------------------- */
 #ifdef __cplusplus
 }

@@ -42,7 +42,6 @@ FailSignal_ToIdleExt0(FailSignal *const me, RKH_EVT_T *pe)
 	RKH_TR_FWK_SIG(evFailHigh);
 	RKH_TR_FWK_SIG(evFailLow);
 	#if 1
-		RKH_TR_FWK_OBJ_NAME(FailSignal_initial, "initial");
 		RKH_TR_FWK_OBJ_NAME(FailSignal_ToIdleExt0, "ToIdleExt0");
 		RKH_TR_FWK_OBJ_NAME(FailSignal_enFailure, "enFailure");
 	#endif
