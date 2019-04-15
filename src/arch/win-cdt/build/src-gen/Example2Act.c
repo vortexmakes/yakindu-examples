@@ -45,6 +45,8 @@ Example2_ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 	RKH_TR_FWK_STATE(me, &CompState);
 	RKH_TR_FWK_STATE(me, &StateD);
 	RKH_TR_FWK_STATE(me, &StateE);
+	RKH_TR_FWK_STATE(me, &StateF);
+	RKH_TR_FWK_STATE(me, &StateG);
 	RKH_TR_FWK_SIG(evA);
 	RKH_TR_FWK_SIG(evB);
 	RKH_TR_FWK_SIG(evC);
@@ -52,11 +54,12 @@ Example2_ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 		RKH_TR_FWK_OBJ_NAME(Example2_ToStateAExt0, "ToStateAExt0");
 		RKH_TR_FWK_OBJ_NAME(Example2_StateBToStateCExt3, "StateBToStateCExt3");
 		RKH_TR_FWK_OBJ_NAME(Example2_StateCToC1Ext6, "StateCToC1Ext6");
-		RKH_TR_FWK_OBJ_NAME(Example2_StateCToNULLExt7, "StateCToNULLExt7");
+		RKH_TR_FWK_OBJ_NAME(Example2_StateCToH1Ext7, "StateCToH1Ext7");
 		RKH_TR_FWK_OBJ_NAME(Example2_CompStateToStateCExt8, "CompStateToStateCExt8");
-		RKH_TR_FWK_OBJ_NAME(Example2_C0ToC1Ext13, "C0ToC1Ext13");
-		RKH_TR_FWK_OBJ_NAME(Example2_C1ToCompStateExt14, "C1ToCompStateExt14");
-		RKH_TR_FWK_OBJ_NAME(Example2_C1ToStateAExt15, "C1ToStateAExt15");
+		RKH_TR_FWK_OBJ_NAME(Example2_H2ToStateGExt13, "H2ToStateGExt13");
+		RKH_TR_FWK_OBJ_NAME(Example2_C0ToC1Ext16, "C0ToC1Ext16");
+		RKH_TR_FWK_OBJ_NAME(Example2_C1ToCompStateExt17, "C1ToCompStateExt17");
+		RKH_TR_FWK_OBJ_NAME(Example2_C1ToStateAExt18, "C1ToStateAExt18");
 		RKH_TR_FWK_OBJ_NAME(Example2_StateAToStateALoc2, "StateAToStateALoc2");
 		RKH_TR_FWK_OBJ_NAME(Example2_enStateA, "enStateA");
 		RKH_TR_FWK_OBJ_NAME(Example2_enStateC, "enStateC");
@@ -64,9 +67,9 @@ Example2_ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 		RKH_TR_FWK_OBJ_NAME(Example2_exStateA, "exStateA");
 		RKH_TR_FWK_OBJ_NAME(Example2_exCompState, "exCompState");
 		RKH_TR_FWK_OBJ_NAME(Example2_isCondStateCToCompState5, "isCondStateCToCompState5");
-		RKH_TR_FWK_OBJ_NAME(Example2_isCondC0ToStateC12, "isCondC0ToStateC12");
-		RKH_TR_FWK_OBJ_NAME(Example2_isCondC0ToC113, "isCondC0ToC113");
-		RKH_TR_FWK_OBJ_NAME(Example2_isCondC1ToCompState14, "isCondC1ToCompState14");
+		RKH_TR_FWK_OBJ_NAME(Example2_isCondC0ToStateC15, "isCondC0ToStateC15");
+		RKH_TR_FWK_OBJ_NAME(Example2_isCondC0ToC116, "isCondC0ToC116");
+		RKH_TR_FWK_OBJ_NAME(Example2_isCondC1ToCompState17, "isCondC1ToCompState17");
 	#endif
 	
 	simpleOp();
@@ -85,7 +88,7 @@ Example2_StateCToC1Ext6(Example2 *const me, RKH_EVT_T *pe)
 }
 
 void 
-Example2_StateCToNULLExt7(Example2 *const me, RKH_EVT_T *pe)
+Example2_StateCToH1Ext7(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->boolVar = true;
 }
@@ -97,19 +100,25 @@ Example2_CompStateToStateCExt8(Example2 *const me, RKH_EVT_T *pe)
 }
 
 void 
-Example2_C0ToC1Ext13(Example2 *const me, RKH_EVT_T *pe)
+Example2_H2ToStateGExt13(Example2 *const me, RKH_EVT_T *pe)
+{
+	me->intVar = 1;
+}
+
+void 
+Example2_C0ToC1Ext16(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->boolVar = true;
 }
 
 void 
-Example2_C1ToCompStateExt14(Example2 *const me, RKH_EVT_T *pe)
+Example2_C1ToCompStateExt17(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar++;
 }
 
 void 
-Example2_C1ToStateAExt15(Example2 *const me, RKH_EVT_T *pe)
+Example2_C1ToStateAExt18(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar = 0;
 }
@@ -164,19 +173,19 @@ Example2_isCondStateCToCompState5(Example2 *const me, RKH_EVT_T *pe)
 }
 
 rbool_t 
-Example2_isCondC0ToStateC12(Example2 *const me, RKH_EVT_T *pe)
+Example2_isCondC0ToStateC15(Example2 *const me, RKH_EVT_T *pe)
 {
 	return ((me->intVar == 0)) ? true : false;
 }
 
 rbool_t 
-Example2_isCondC0ToC113(Example2 *const me, RKH_EVT_T *pe)
+Example2_isCondC0ToC116(Example2 *const me, RKH_EVT_T *pe)
 {
 	return ((me->intVar == 1)) ? true : false;
 }
 
 rbool_t 
-Example2_isCondC1ToCompState14(Example2 *const me, RKH_EVT_T *pe)
+Example2_isCondC1ToCompState17(Example2 *const me, RKH_EVT_T *pe)
 {
 	return ((me->boolVar == false)) ? true : false;
 }
