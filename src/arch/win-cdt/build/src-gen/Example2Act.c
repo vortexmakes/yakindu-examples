@@ -26,6 +26,7 @@
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */
 static rInt foo = 0;
+
 /* ----------------------- Local function prototypes ----------------------- */
 /* ---------------------------- Local functions ---------------------------- */
 /* ............................ Effect actions ............................. */
@@ -53,13 +54,13 @@ Example2_ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 	#if 1
 		RKH_TR_FWK_OBJ_NAME(Example2_ToStateAExt0, "ToStateAExt0");
 		RKH_TR_FWK_OBJ_NAME(Example2_StateBToStateCExt3, "StateBToStateCExt3");
-		RKH_TR_FWK_OBJ_NAME(Example2_StateCToC1Ext6, "StateCToC1Ext6");
+		RKH_TR_FWK_OBJ_NAME(Example2_StateCToExt6, "StateCToExt6");
 		RKH_TR_FWK_OBJ_NAME(Example2_StateCToH1Ext7, "StateCToH1Ext7");
 		RKH_TR_FWK_OBJ_NAME(Example2_CompStateToStateCExt8, "CompStateToStateCExt8");
 		RKH_TR_FWK_OBJ_NAME(Example2_H2ToStateGExt13, "H2ToStateGExt13");
-		RKH_TR_FWK_OBJ_NAME(Example2_C0ToC1Ext16, "C0ToC1Ext16");
-		RKH_TR_FWK_OBJ_NAME(Example2_C1ToCompStateExt17, "C1ToCompStateExt17");
-		RKH_TR_FWK_OBJ_NAME(Example2_C1ToStateAExt18, "C1ToStateAExt18");
+		RKH_TR_FWK_OBJ_NAME(Example2_ToExt16, "ToExt16");
+		RKH_TR_FWK_OBJ_NAME(Example2_ToCompStateExt17, "ToCompStateExt17");
+		RKH_TR_FWK_OBJ_NAME(Example2_ToStateAExt18, "ToStateAExt18");
 		RKH_TR_FWK_OBJ_NAME(Example2_StateAToStateALoc2, "StateAToStateALoc2");
 		RKH_TR_FWK_OBJ_NAME(Example2_enStateA, "enStateA");
 		RKH_TR_FWK_OBJ_NAME(Example2_enStateC, "enStateC");
@@ -67,9 +68,6 @@ Example2_ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 		RKH_TR_FWK_OBJ_NAME(Example2_exStateA, "exStateA");
 		RKH_TR_FWK_OBJ_NAME(Example2_exCompState, "exCompState");
 		RKH_TR_FWK_OBJ_NAME(Example2_isCondStateCToCompState5, "isCondStateCToCompState5");
-		RKH_TR_FWK_OBJ_NAME(Example2_isCondC0ToStateC15, "isCondC0ToStateC15");
-		RKH_TR_FWK_OBJ_NAME(Example2_isCondC0ToC116, "isCondC0ToC116");
-		RKH_TR_FWK_OBJ_NAME(Example2_isCondC1ToCompState17, "isCondC1ToCompState17");
 	#endif
 	
 	simpleOp();
@@ -82,7 +80,7 @@ Example2_StateBToStateCExt3(Example2 *const me, RKH_EVT_T *pe)
 }
 
 void 
-Example2_StateCToC1Ext6(Example2 *const me, RKH_EVT_T *pe)
+Example2_StateCToExt6(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->boolVar = false;
 }
@@ -106,19 +104,19 @@ Example2_H2ToStateGExt13(Example2 *const me, RKH_EVT_T *pe)
 }
 
 void 
-Example2_C0ToC1Ext16(Example2 *const me, RKH_EVT_T *pe)
+Example2_ToExt16(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->boolVar = true;
 }
 
 void 
-Example2_C1ToCompStateExt17(Example2 *const me, RKH_EVT_T *pe)
+Example2_ToCompStateExt17(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar++;
 }
 
 void 
-Example2_C1ToStateAExt18(Example2 *const me, RKH_EVT_T *pe)
+Example2_ToStateAExt18(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar = 0;
 }
@@ -170,24 +168,6 @@ rbool_t
 Example2_isCondStateCToCompState5(Example2 *const me, RKH_EVT_T *pe)
 {
 	return ((me->intVar == 5)) ? true : false;
-}
-
-rbool_t 
-Example2_isCondC0ToStateC15(Example2 *const me, RKH_EVT_T *pe)
-{
-	return ((me->intVar == 0)) ? true : false;
-}
-
-rbool_t 
-Example2_isCondC0ToC116(Example2 *const me, RKH_EVT_T *pe)
-{
-	return ((me->intVar == 1)) ? true : false;
-}
-
-rbool_t 
-Example2_isCondC1ToCompState17(Example2 *const me, RKH_EVT_T *pe)
-{
-	return ((me->boolVar == false)) ? true : false;
 }
 
 /* ---------------------------- Global functions --------------------------- */

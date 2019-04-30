@@ -1,7 +1,7 @@
 /* --------------------------------- Notes --------------------------------- */
 /* --------------------------------- Module -------------------------------- */
-#ifndef __EXAMPLE2_H__
-#define __EXAMPLE2_H__
+#ifndef __SIGNALMONITOR1_H__
+#define __SIGNALMONITOR1_H__
 
 /* ----------------------------- Include files ----------------------------- */
 #include "rkhsma.h"
@@ -14,22 +14,19 @@ extern "C" {
 /* --------------------------------- Macros -------------------------------- */
 /* -------------------------------- Constants ------------------------------ */
 /* ........................ Declares active object ......................... */
-RKH_SMA_DCLR(example2);
+RKH_SMA_DCLR(signalMonitor1);
 
 /* ................... Declares states and pseudostates .................... */
-RKH_DCLR_BASIC_STATE StateA, StateB, StateC, StateD, StateE, StateG;
-RKH_DCLR_COMP_STATE CompState, StateF;
+RKH_DCLR_BASIC_STATE Idle, Success, Failure;
 
 /* ------------------------------- Data types ------------------------------ */
 /* ............................. Active object ............................. */
-typedef struct Example2 Example2;
-struct Example2
+typedef struct SignalMonitor1 SignalMonitor1;
+struct SignalMonitor1
 {
     RKH_SMA_T sma;      /* base structure */
-    rInt intVar;
-    rbool_t boolVar;
-    rInt uninitializedIntVar;
-    rbool_t uninitializedBoolVar;
+    rInt currInput;
+    rInt lastInput;
 };
 
 /* -------------------------- External variables --------------------------- */

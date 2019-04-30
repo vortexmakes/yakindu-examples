@@ -1,39 +1,38 @@
+/**
+ *  \file       SignalMonitor1ActRequired.h
+ *  \brief
+ */
+
+/* -------------------------- Development history -------------------------- */
+/*
+ */
+
+/* -------------------------------- Authors -------------------------------- */
+/*
+ */
+
 /* --------------------------------- Notes --------------------------------- */
 /* --------------------------------- Module -------------------------------- */
-#ifndef __EXAMPLE2_H__
-#define __EXAMPLE2_H__
+#ifndef __SIGNALMONITOR1ACTREQUIRED_H__
+#define __SIGNALMONITOR1ACTREQUIRED_H__
 
 /* ----------------------------- Include files ----------------------------- */
-#include "rkhsma.h"
+#include "rkhtype.h"
+#include "SignalMonitor1ActAccess.h"
 
 /* ---------------------- External C language linkage ---------------------- */
 #ifdef __cplusplus
-extern "C" {
+	extern "C" {
 #endif
 
 /* --------------------------------- Macros -------------------------------- */
 /* -------------------------------- Constants ------------------------------ */
-/* ........................ Declares active object ......................... */
-RKH_SMA_DCLR(example2);
-
-/* ................... Declares states and pseudostates .................... */
-RKH_DCLR_BASIC_STATE StateA, StateB, StateC, StateD, StateE, StateG;
-RKH_DCLR_COMP_STATE CompState, StateF;
-
 /* ------------------------------- Data types ------------------------------ */
-/* ............................. Active object ............................. */
-typedef struct Example2 Example2;
-struct Example2
-{
-    RKH_SMA_T sma;      /* base structure */
-    rInt intVar;
-    rbool_t boolVar;
-    rInt uninitializedIntVar;
-    rbool_t uninitializedBoolVar;
-};
-
 /* -------------------------- External variables --------------------------- */
 /* -------------------------- Function prototypes -------------------------- */
+void Init(void);
+void MeasureFailure(void);
+
 /* -------------------- External C language linkage end -------------------- */
 #ifdef __cplusplus
 }

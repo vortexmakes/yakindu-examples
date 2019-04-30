@@ -1,5 +1,5 @@
 /**
- *  \file       Example2.h
+ *  \file       SignalMonitor1.h
  *  \brief      Active object's action specifications.
  */
 
@@ -14,12 +14,12 @@
 
 /* --------------------------------- Notes --------------------------------- */
 /* --------------------------------- Module -------------------------------- */
-#ifndef __EXAMPLE2ACT_H__
-#define __EXAMPLE2ACT_H__
+#ifndef __SIGNALMONITOR1ACT_H__
+#define __SIGNALMONITOR1ACT_H__
 
 /* ----------------------------- Include files ----------------------------- */
 #include "rkh.h"
-#include "Example2.h"
+#include "SignalMonitor1.h"
 
 /* ---------------------- External C language linkage ---------------------- */
 #ifdef __cplusplus
@@ -32,28 +32,14 @@ extern "C" {
 /* -------------------------- External variables --------------------------- */
 /* -------------------------- Function prototypes -------------------------- */
 /* ........................ Declares effect actions ........................ */
-void Example2_ToStateAExt0(Example2 *const me, RKH_EVT_T *pe);
-void Example2_StateBToStateCExt3(Example2 *const me, RKH_EVT_T *pe);
-void Example2_StateCToExt6(Example2 *const me, RKH_EVT_T *pe);
-void Example2_StateCToH1Ext7(Example2 *const me, RKH_EVT_T *pe);
-void Example2_CompStateToStateCExt8(Example2 *const me, RKH_EVT_T *pe);
-void Example2_H2ToStateGExt13(Example2 *const me, RKH_EVT_T *pe);
-void Example2_ToExt16(Example2 *const me, RKH_EVT_T *pe);
-void Example2_ToCompStateExt17(Example2 *const me, RKH_EVT_T *pe);
-void Example2_ToStateAExt18(Example2 *const me, RKH_EVT_T *pe);
-void Example2_StateAToStateALoc2(Example2 *const me, RKH_EVT_T *pe);
+void SignalMonitor1_ToIdleExt0(SignalMonitor1 *const me, RKH_EVT_T *pe);
 
 /* ......................... Declares entry actions ........................ */
-void Example2_enStateA(Example2 *const me);
-void Example2_enStateC(Example2 *const me);
-void Example2_enCompState(Example2 *const me);
+void SignalMonitor1_enFailure(SignalMonitor1 *const me);
 
 /* ......................... Declares exit actions ......................... */
-void Example2_exStateA(Example2 *const me);
-void Example2_exCompState(Example2 *const me);
 
 /* ............................ Declares guards ............................ */
-rbool_t Example2_isCondStateCToCompState5(Example2 *const me, RKH_EVT_T *pe);
 
 /* -------------------- External C language linkage end -------------------- */
 #ifdef __cplusplus

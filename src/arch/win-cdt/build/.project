@@ -117,6 +117,56 @@
 			<locationURI>PARENT-4-PROJECT_LOC/model/SeqDigSignal.sgen</locationURI>
 		</link>
 		<link>
+			<name>model/SignalMonitor1.sct</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor1.sct</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor1.sgen</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor1.sgen</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor2.sct</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor2.sct</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor2.sgen</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor2.sgen</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor3.sct</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor3.sct</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor3.sgen</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor3.sgen</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor4.sct</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor4.sct</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor4.sgen</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor4.sgen</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor5.sct</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor5.sct</locationURI>
+		</link>
+		<link>
+			<name>model/SignalMonitor5.sgen</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor5.sgen</locationURI>
+		</link>
+		<link>
 			<name>model/example2.sct</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/model/example2.sct</locationURI>
