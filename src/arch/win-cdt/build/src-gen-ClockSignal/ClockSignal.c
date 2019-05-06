@@ -20,11 +20,11 @@
 
 /* ----------------------------- Local macros ------------------------------ */
 /* ........................ States and pseudostates ........................ */
-RKH_CREATE_BASIC_STATE(Idle ,NULL ,NULL ,RKH_ROOT, NULL);
+RKH_CREATE_BASIC_STATE(Idle, NULL, NULL, &Idle, NULL);
 
-RKH_CREATE_BASIC_STATE(WaitFallEdge ,NULL ,NULL ,RKH_ROOT, NULL);
+RKH_CREATE_BASIC_STATE(WaitFallEdge, NULL, NULL, &WaitFallEdge, NULL);
 
-RKH_CREATE_BASIC_STATE(WaitRisEdge ,NULL ,NULL ,RKH_ROOT, NULL);
+RKH_CREATE_BASIC_STATE(WaitRisEdge, NULL, NULL, &WaitRisEdge, NULL);
 
 RKH_CREATE_TRANS_TABLE(Idle)
 RKH_TRREG(evClockHigh, NULL, NULL, &WaitFallEdge),

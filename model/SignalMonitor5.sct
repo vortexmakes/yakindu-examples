@@ -15,7 +15,7 @@
           <vertices xsi:type="sgraph:Entry" xmi:id="_O79UAGtuEemQYMPp2sufPA">
             <outgoingTransitions xmi:id="_PasecGtuEemQYMPp2sufPA" specification="" target="_e2jvMGzREemIOJc7su9YvQ"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_e2jvMGzREemIOJc7su9YvQ" specification="evSync / lastDigIn = DigIn_get();&#xD;&#xA;              evt = makeEvt(lastDigIn);&#xD;&#xA;              RKH_SMA_POST_LIFO(me, evt, me)" name="Sampler" incomingTransitions="_PasecGtuEemQYMPp2sufPA">
+          <vertices xsi:type="sgraph:State" xmi:id="_e2jvMGzREemIOJc7su9YvQ" specification="evSync / lastDigIn = DigIn_get();&#xD;&#xA;              evt = makeEvt(lastDigIn);&#xD;&#xA;              RKH_SMA_POST_LIFO(me, evt, me)" name="Sampler" incomingTransitions="_PasecGtuEemQYMPp2sufPA" documentation="Active state is equivalent to a syncrhonous and orthogonal state, where the Sampler state represents both regionSampler and regionVIMeasure regions and it generates events to regionVIMeasure.">
             <regions xmi:id="_e2kWQGzREemIOJc7su9YvQ" name="r1">
               <vertices xsi:type="sgraph:Entry" xmi:id="_utImUGzREemIOJc7su9YvQ">
                 <outgoingTransitions xmi:id="_utImUWzREemIOJc7su9YvQ" specification="" target="_utJ0cmzREemIOJc7su9YvQ"/>
