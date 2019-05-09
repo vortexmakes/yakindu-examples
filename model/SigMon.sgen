@@ -1,0 +1,11 @@
+GeneratorModel for yakindu::c::rkh {
+
+	statechart SigMon {
+
+		feature Outlet {
+			targetProject = "example1"
+			targetFolder = "src-gen-SignalMonitor6"
+			libraryTargetFolder = "src-gen-SignalMonitor6"
+		}
+	}
+}
