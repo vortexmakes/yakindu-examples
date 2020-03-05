@@ -14,37 +14,37 @@
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
 #include "rkhsma.h"
-#include "signal.h"
+#include "signals.h"
 #include "ClockSignal.h"
 #include "ClockSignalAct.h"
 
 /* ----------------------------- Local macros ------------------------------ */
 /* ........................ States and pseudostates ........................ */
-RKH_CREATE_BASIC_STATE(Idle, NULL, NULL, &Idle, NULL);
+RKH_CREATE_BASIC_STATE(Idle, NULL, NULL, RKH_ROOT, NULL);
+RKH_CREATE_BASIC_STATE(WaitFallEdge, NULL, NULL, RKH_ROOT, NULL);
+RKH_CREATE_BASIC_STATE(WaitRisEdge, NULL, NULL, RKH_ROOT, NULL);
 
-RKH_CREATE_BASIC_STATE(WaitFallEdge, NULL, NULL, &WaitFallEdge, NULL);
-
-RKH_CREATE_BASIC_STATE(WaitRisEdge, NULL, NULL, &WaitRisEdge, NULL);
 
 RKH_CREATE_TRANS_TABLE(Idle)
-RKH_TRREG(evClockHigh, NULL, NULL, &WaitFallEdge),
-RKH_TRREG(evClockLow, NULL, NULL, &WaitRisEdge),
+	RKH_TRREG(evClockHigh, NULL, NULL, &WaitFallEdge),
+	RKH_TRREG(evClockLow, NULL, NULL, &WaitRisEdge),
 RKH_END_TRANS_TABLE
 
 RKH_CREATE_TRANS_TABLE(WaitFallEdge)
-RKH_TRREG(evClockLow, NULL, ClockSignal_WaitFallEdgeToWaitRisEdgeExt3, &WaitRisEdge),
+	RKH_TRREG(evClockLow, NULL, ClockSignal_WaitFallEdgeToWaitRisEdgeExt3, &WaitRisEdge),
 RKH_END_TRANS_TABLE
 
 RKH_CREATE_TRANS_TABLE(WaitRisEdge)
-RKH_TRREG(evClockHigh, NULL, NULL, &WaitFallEdge),
+	RKH_TRREG(evClockHigh, NULL, NULL, &WaitFallEdge),
 RKH_END_TRANS_TABLE
+
+
 
 /* ............................. Active object ............................. */
 RKH_SMA_CREATE(ClockSignal, clockSignal, 0, HCAL, &Idle, ClockSignal_ToIdleExt0, NULL);
 RKH_SMA_DEF_PTR(clockSignal);
 
 /* ------------------------------- Constants ------------------------------- */
-
 /* ---------------------------- Local data types --------------------------- */
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */

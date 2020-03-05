@@ -14,17 +14,19 @@
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
 #include "rkh.h"
-#include "signal.h"
+#include "signals.h"
 #include "SeqDigSignal.h"
 #include "SeqDigSignalAct.h"
 #include "bsp.h"
 #include "SeqDigSignalActRequired.h"
 
 /* ----------------------------- Local macros ------------------------------ */
+
 /* ------------------------------- Constants ------------------------------- */
 /* ---------------------------- Local data types --------------------------- */
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */
+
 /* ----------------------- Local function prototypes ----------------------- */
 /* ---------------------------- Local functions ---------------------------- */
 /* ............................ Effect actions ............................. */
@@ -45,7 +47,7 @@ SeqDigSignal_ToIdleExt0(SeqDigSignal *const me, RKH_EVT_T *pe)
 	RKH_TR_FWK_SIG(evIn0);
 	RKH_TR_FWK_SIG(evIn1);
 	RKH_TR_FWK_SIG(evIn2);
-	#if 1
+	#if 0
 		RKH_TR_FWK_OBJ_NAME(SeqDigSignal_ToIdleExt0, "ToIdleExt0");
 		RKH_TR_FWK_OBJ_NAME(SeqDigSignal_IdleToSeq0Ext1, "IdleToSeq0Ext1");
 		RKH_TR_FWK_OBJ_NAME(SeqDigSignal_Seq0ToSeq1Ext3, "Seq0ToSeq1Ext3");

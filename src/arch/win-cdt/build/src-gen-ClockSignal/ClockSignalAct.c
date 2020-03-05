@@ -14,17 +14,19 @@
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
 #include "rkh.h"
-#include "signal.h"
+#include "signals.h"
 #include "ClockSignal.h"
 #include "ClockSignalAct.h"
 #include "bsp.h"
 #include "ClockSignalActRequired.h"
 
 /* ----------------------------- Local macros ------------------------------ */
+
 /* ------------------------------- Constants ------------------------------- */
 /* ---------------------------- Local data types --------------------------- */
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */
+
 /* ----------------------- Local function prototypes ----------------------- */
 /* ---------------------------- Local functions ---------------------------- */
 /* ............................ Effect actions ............................. */
@@ -41,7 +43,7 @@ ClockSignal_ToIdleExt0(ClockSignal *const me, RKH_EVT_T *pe)
 	RKH_TR_FWK_STATE(me, &WaitRisEdge);
 	RKH_TR_FWK_SIG(evClockHigh);
 	RKH_TR_FWK_SIG(evClockLow);
-	#if 1
+	#if 0
 		RKH_TR_FWK_OBJ_NAME(ClockSignal_ToIdleExt0, "ToIdleExt0");
 		RKH_TR_FWK_OBJ_NAME(ClockSignal_WaitFallEdgeToWaitRisEdgeExt3, "WaitFallEdgeToWaitRisEdgeExt3");
 	#endif

@@ -14,17 +14,19 @@
 /* --------------------------------- Notes --------------------------------- */
 /* ----------------------------- Include files ----------------------------- */
 #include "rkh.h"
-#include "signal.h"
+#include "signals.h"
 #include "FailSignal.h"
 #include "FailSignalAct.h"
 #include "bsp.h"
 #include "FailSignalActRequired.h"
 
 /* ----------------------------- Local macros ------------------------------ */
+
 /* ------------------------------- Constants ------------------------------- */
 /* ---------------------------- Local data types --------------------------- */
 /* ---------------------------- Global variables --------------------------- */
 /* ---------------------------- Local variables ---------------------------- */
+
 /* ----------------------- Local function prototypes ----------------------- */
 /* ---------------------------- Local functions ---------------------------- */
 /* ............................ Effect actions ............................. */
@@ -41,7 +43,7 @@ FailSignal_ToIdleExt0(FailSignal *const me, RKH_EVT_T *pe)
 	RKH_TR_FWK_STATE(me, &Failure);
 	RKH_TR_FWK_SIG(evFailHigh);
 	RKH_TR_FWK_SIG(evFailLow);
-	#if 1
+	#if 0
 		RKH_TR_FWK_OBJ_NAME(FailSignal_ToIdleExt0, "ToIdleExt0");
 		RKH_TR_FWK_OBJ_NAME(FailSignal_enFailure, "enFailure");
 	#endif
