@@ -107,26 +107,6 @@
 			<locationURI>PARENT-4-PROJECT_LOC/model/FailSignal.sgen</locationURI>
 		</link>
 		<link>
-			<name>model/SeqDigSignal.sct</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/model/SeqDigSignal.sct</locationURI>
-		</link>
-		<link>
-			<name>model/SeqDigSignal.sgen</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/model/SeqDigSignal.sgen</locationURI>
-		</link>
-		<link>
-			<name>model/SigMon.sct</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor6.sct</locationURI>
-		</link>
-		<link>
-			<name>model/SigMon.sgen</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor6.sgen</locationURI>
-		</link>
-		<link>
 			<name>model/SignalMonitor1.sct</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/model/SignalMonitor1.sct</locationURI>

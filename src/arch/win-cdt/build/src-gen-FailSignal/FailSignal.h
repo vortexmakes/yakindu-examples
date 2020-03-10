@@ -16,19 +16,7 @@ extern "C" {
 /* ........................ Declares active object ......................... */
 RKH_SMA_DCLR(failSignal);
 
-/* ................... Declares states and pseudostates .................... */
-RKH_DCLR_BASIC_STATE Idle, Success, Failure;
-
 /* ------------------------------- Data types ------------------------------ */
-/* ............................. Active object ............................. */
-typedef struct FailSignal FailSignal;
-struct FailSignal
-{
-    RKH_SMA_T sma;      /* base structure */
-    rInt currInput;
-    rInt lastInput;
-};
-
 /* -------------------------- External variables --------------------------- */
 /* -------------------------- Function prototypes -------------------------- */
 /* -------------------- External C language linkage end -------------------- */

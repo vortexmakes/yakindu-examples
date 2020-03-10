@@ -1,36 +1,39 @@
+/**
+ *  \file       SeqDigSignalRequired.h
+ *  \brief
+ */
+
+/* -------------------------- Development history -------------------------- */
+/*
+ */
+
+/* -------------------------------- Authors -------------------------------- */
+/*
+ */
+
 /* --------------------------------- Notes --------------------------------- */
 /* --------------------------------- Module -------------------------------- */
-#ifndef __CLOCKSIGNAL_H__
-#define __CLOCKSIGNAL_H__
+#ifndef __SEQDIGSIGNALREQUIRED_H__
+#define __SEQDIGSIGNALREQUIRED_H__
 
 /* ----------------------------- Include files ----------------------------- */
-#include "rkhsma.h"
+#include "rkhtype.h"
+#include "SeqDigSignalAccess.h"
 
 /* ---------------------- External C language linkage ---------------------- */
 #ifdef __cplusplus
-extern "C" {
+	extern "C" {
 #endif
 
 /* --------------------------------- Macros -------------------------------- */
 /* -------------------------------- Constants ------------------------------ */
-/* ........................ Declares active object ......................... */
-RKH_SMA_DCLR(clockSignal);
-
-/* ................... Declares states and pseudostates .................... */
-RKH_DCLR_BASIC_STATE Idle, WaitFallEdge, WaitRisEdge;
-
 /* ------------------------------- Data types ------------------------------ */
-/* ............................. Active object ............................. */
-typedef struct ClockSignal ClockSignal;
-struct ClockSignal
-{
-    RKH_SMA_T sma;      /* base structure */
-    rInt currInput;
-    rInt lastInput;
-};
-
 /* -------------------------- External variables --------------------------- */
 /* -------------------------- Function prototypes -------------------------- */
+void Init(void);
+void GetVIMeasures(void);
+void CalcVIAverages(void);
+
 /* -------------------- External C language linkage end -------------------- */
 #ifdef __cplusplus
 }

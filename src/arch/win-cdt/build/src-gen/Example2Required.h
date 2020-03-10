@@ -1,5 +1,5 @@
 /**
- *  \file       ClockSignalActRequired.h
+ *  \file       Example2Required.h
  *  \brief
  */
 
@@ -13,12 +13,12 @@
 
 /* --------------------------------- Notes --------------------------------- */
 /* --------------------------------- Module -------------------------------- */
-#ifndef __CLOCKSIGNALACTREQUIRED_H__
-#define __CLOCKSIGNALACTREQUIRED_H__
+#ifndef __EXAMPLE2REQUIRED_H__
+#define __EXAMPLE2REQUIRED_H__
 
 /* ----------------------------- Include files ----------------------------- */
 #include "rkhtype.h"
-#include "ClockSignalActAccess.h"
+#include "Example2Access.h"
 
 /* ---------------------- External C language linkage ---------------------- */
 #ifdef __cplusplus
@@ -30,8 +30,10 @@
 /* ------------------------------- Data types ------------------------------ */
 /* -------------------------- External variables --------------------------- */
 /* -------------------------- Function prototypes -------------------------- */
-void Init(void);
-void SeqDigSignal_dispatch(rInt input);
+void simpleOp(void);
+void opWithParams(rInt i, rbool_t b);
+rInt opWithReturn(void);
+rInt opWithParamAndReturn(rInt i);
 
 /* -------------------- External C language linkage end -------------------- */
 #ifdef __cplusplus

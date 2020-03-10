@@ -18,7 +18,7 @@
 #include "rkhtmr.h"
 #include "Example2.h"
 #include "bsp.h"
-#include "Example2ActRequired.h"
+#include "Example2Required.h"
 
 /* ----------------------------- Local macros ------------------------------ */
 #define WaitTime0	RKH_TIME_MS(100)
@@ -28,133 +28,133 @@
 typedef struct Example2 Example2;
 
 /* ................... Declares states and pseudostates .................... */
-RKH_DCLR_BASIC_STATE StateA, StateB, StateC, StateD, StateE, StateG, StateF11, CompState21;
-RKH_DCLR_COMP_STATE CompState, StateF, StateF1, CompState2;
-RKH_DCLR_CHOICE_STATE C0, C1;
-RKH_DCLR_FINAL_STATE CompState_Final, Example2_Final;
-RKH_DCLR_SHIST_STATE H1, H2;
+RKH_DCLR_BASIC_STATE Example2_StateA, Example2_StateB, Example2_StateC, Example2_StateD, Example2_StateE, Example2_StateG, Example2_StateF11, Example2_CompState21;
+RKH_DCLR_COMP_STATE Example2_CompState, Example2_StateF, Example2_StateF1, Example2_CompState2;
+RKH_DCLR_CHOICE_STATE Example2_C0, Example2_C1;
+RKH_DCLR_FINAL_STATE Example2_CompStateFinal, Example2Final;
+RKH_DCLR_SHIST_STATE Example2_H1, Example2_H2;
 
 /* ........................ Declares effect actions ........................ */
-void ToStateAExt0(Example2 *const me, RKH_EVT_T *pe);
-void StateBToStateCExt3(Example2 *const me, RKH_EVT_T *pe);
-void StateCToC1Ext8(Example2 *const me, RKH_EVT_T *pe);
-void StateCToH1Ext9(Example2 *const me, RKH_EVT_T *pe);
-void CompStateToStateCExt10(Example2 *const me, RKH_EVT_T *pe);
-void StateEToCompState_FinalExt15(Example2 *const me, RKH_EVT_T *pe);
-void ToStateGExt17(Example2 *const me, RKH_EVT_T *pe);
-void H2ToStateGExt18(Example2 *const me, RKH_EVT_T *pe);
-void ToStateF11Ext19(Example2 *const me, RKH_EVT_T *pe);
-void C0ToC1Ext22(Example2 *const me, RKH_EVT_T *pe);
-void C1ToCompStateExt23(Example2 *const me, RKH_EVT_T *pe);
-void C1ToStateAExt24(Example2 *const me, RKH_EVT_T *pe);
-void StateAToStateALoc2(Example2 *const me, RKH_EVT_T *pe);
-void CompState21ToCompState21Loc6(Example2 *const me, RKH_EVT_T *pe);
+static void ToStateAExt0(Example2 *const me, RKH_EVT_T *pe);
+static void StateBToStateCExt3(Example2 *const me, RKH_EVT_T *pe);
+static void StateCToC1Ext8(Example2 *const me, RKH_EVT_T *pe);
+static void StateCToH1Ext9(Example2 *const me, RKH_EVT_T *pe);
+static void CompStateToStateCExt10(Example2 *const me, RKH_EVT_T *pe);
+static void StateEToCompStateFinalExt15(Example2 *const me, RKH_EVT_T *pe);
+static void ToStateGExt17(Example2 *const me, RKH_EVT_T *pe);
+static void H2ToStateGExt18(Example2 *const me, RKH_EVT_T *pe);
+static void ToStateF11Ext19(Example2 *const me, RKH_EVT_T *pe);
+static void C0ToC1Ext22(Example2 *const me, RKH_EVT_T *pe);
+static void C1ToCompStateExt23(Example2 *const me, RKH_EVT_T *pe);
+static void C1ToStateAExt24(Example2 *const me, RKH_EVT_T *pe);
+static void StateAToStateALoc2(Example2 *const me, RKH_EVT_T *pe);
+static void CompState21ToCompState21Loc6(Example2 *const me, RKH_EVT_T *pe);
 
 /* ......................... Declares entry actions ........................ */
-void enStateA(Example2 *const me);
-void enStateB(Example2 *const me);
-void enStateC(Example2 *const me);
-void enCompState(Example2 *const me);
-void enCompState21(Example2 *const me);
+static void enStateA(Example2 *const me);
+static void enStateB(Example2 *const me);
+static void enStateC(Example2 *const me);
+static void enCompState(Example2 *const me);
+static void enCompState21(Example2 *const me);
 
 /* ......................... Declares exit actions ......................... */
-void exStateA(Example2 *const me);
-void exStateB(Example2 *const me);
-void exCompState(Example2 *const me);
-void exCompState21(Example2 *const me);
+static void exStateA(Example2 *const me);
+static void exStateB(Example2 *const me);
+static void exCompState(Example2 *const me);
+static void exCompState21(Example2 *const me);
 
 /* ............................ Declares guards ............................ */
-rbool_t isCondStateCToCompState7(Example2 *const me, RKH_EVT_T *pe);
-rbool_t isCondC0ToStateC21(Example2 *const me, RKH_EVT_T *pe);
-rbool_t isCondC0ToC122(Example2 *const me, RKH_EVT_T *pe);
-rbool_t isCondC1ToCompState23(Example2 *const me, RKH_EVT_T *pe);
+static rbool_t isCondStateCToCompState7(Example2 *const me, RKH_EVT_T *pe);
+static rbool_t isCondC0ToStateC21(Example2 *const me, RKH_EVT_T *pe);
+static rbool_t isCondC0ToC122(Example2 *const me, RKH_EVT_T *pe);
+static rbool_t isCondC1ToCompState23(Example2 *const me, RKH_EVT_T *pe);
 
 /* ........................ States and pseudostates ........................ */
-RKH_CREATE_BASIC_STATE(StateA, enStateA, exStateA, RKH_ROOT, NULL);
-RKH_CREATE_BASIC_STATE(StateB, enStateB, exStateB, RKH_ROOT, NULL);
-RKH_CREATE_BASIC_STATE(StateC, enStateC, NULL, RKH_ROOT, NULL);
-RKH_CREATE_BASIC_STATE(StateD, NULL, NULL, &CompState, NULL);
-RKH_CREATE_BASIC_STATE(StateE, NULL, NULL, &CompState, NULL);
-RKH_CREATE_BASIC_STATE(StateG, NULL, NULL, &StateF, NULL);
-RKH_CREATE_BASIC_STATE(StateF11, NULL, NULL, &StateF1, NULL);
-RKH_CREATE_BASIC_STATE(CompState21, enCompState21, exCompState21, &CompState2, NULL);
+RKH_CREATE_BASIC_STATE(Example2_StateA, enStateA, exStateA, RKH_ROOT, NULL);
+RKH_CREATE_BASIC_STATE(Example2_StateB, enStateB, exStateB, RKH_ROOT, NULL);
+RKH_CREATE_BASIC_STATE(Example2_StateC, enStateC, NULL, RKH_ROOT, NULL);
+RKH_CREATE_BASIC_STATE(Example2_StateD, NULL, NULL, &Example2_CompState, NULL);
+RKH_CREATE_BASIC_STATE(Example2_StateE, NULL, NULL, &Example2_CompState, NULL);
+RKH_CREATE_BASIC_STATE(Example2_StateG, NULL, NULL, &Example2_StateF, NULL);
+RKH_CREATE_BASIC_STATE(Example2_StateF11, NULL, NULL, &Example2_StateF1, NULL);
+RKH_CREATE_BASIC_STATE(Example2_CompState21, enCompState21, exCompState21, &Example2_CompState2, NULL);
 
-RKH_CREATE_HISTORY_STORAGE(CompState);
-RKH_CREATE_COMP_REGION_STATE(CompState, enCompState, exCompState, RKH_ROOT, &StateD, NULL, RKH_SHISTORY, NULL, NULL, NULL, RKH_GET_HISTORY_STORAGE(CompState));
-RKH_CREATE_HISTORY_STORAGE(StateF);
-RKH_CREATE_COMP_REGION_STATE(StateF, NULL, NULL, &CompState, &StateG, ToStateGExt17, RKH_SHISTORY, NULL, H2ToStateGExt18, &StateG, RKH_GET_HISTORY_STORAGE(StateF));
-RKH_CREATE_COMP_REGION_STATE(StateF1, NULL, NULL, &StateF, &StateF11, ToStateF11Ext19, RKH_NO_HISTORY, NULL, NULL, NULL, NULL);
-RKH_CREATE_COMP_REGION_STATE(CompState2, NULL, NULL, RKH_ROOT, &CompState21, NULL, RKH_NO_HISTORY, NULL, NULL, NULL, NULL);
+RKH_CREATE_HISTORY_STORAGE(Example2_CompState);
+RKH_CREATE_COMP_REGION_STATE(Example2_CompState, enCompState, exCompState, RKH_ROOT, &Example2_StateD, NULL, RKH_SHISTORY, NULL, NULL, NULL, RKH_GET_HISTORY_STORAGE(Example2_CompState));
+RKH_CREATE_HISTORY_STORAGE(Example2_StateF);
+RKH_CREATE_COMP_REGION_STATE(Example2_StateF, NULL, NULL, &Example2_CompState, &Example2_StateG, ToStateGExt17, RKH_SHISTORY, NULL, H2ToStateGExt18, &Example2_StateG, RKH_GET_HISTORY_STORAGE(Example2_StateF));
+RKH_CREATE_COMP_REGION_STATE(Example2_StateF1, NULL, NULL, &Example2_StateF, &Example2_StateF11, ToStateF11Ext19, RKH_NO_HISTORY, NULL, NULL, NULL, NULL);
+RKH_CREATE_COMP_REGION_STATE(Example2_CompState2, NULL, NULL, RKH_ROOT, &Example2_CompState21, NULL, RKH_NO_HISTORY, NULL, NULL, NULL, NULL);
 
-RKH_CREATE_TRANS_TABLE(StateA)
-	RKH_TRREG(evB, NULL, NULL, &StateB),
-	RKH_TRCOMPLETION(NULL, NULL, &StateB),
+RKH_CREATE_TRANS_TABLE(Example2_StateA)
+	RKH_TRREG(evB, NULL, NULL, &Example2_StateB),
+	RKH_TRCOMPLETION(NULL, NULL, &Example2_StateB),
 	RKH_TRINT(evA, NULL, StateAToStateALoc2),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(StateB)
-	RKH_TRREG(evA, NULL, StateBToStateCExt3, &StateC),
-	RKH_TRREG(evB, NULL, StateBToStateCExt3, &StateC),
-	RKH_TRREG(evA, NULL, NULL, &C0),
-	RKH_TRREG(evC, NULL, NULL, &CompState2),
-	RKH_TRREG(evTout0, NULL, NULL, &CompState2),
+RKH_CREATE_TRANS_TABLE(Example2_StateB)
+	RKH_TRREG(evA, NULL, StateBToStateCExt3, &Example2_StateC),
+	RKH_TRREG(evB, NULL, StateBToStateCExt3, &Example2_StateC),
+	RKH_TRREG(evA, NULL, NULL, &Example2_C0),
+	RKH_TRREG(evC, NULL, NULL, &Example2_CompState2),
+	RKH_TRREG(evTout0, NULL, NULL, &Example2_CompState2),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(StateC)
-	RKH_TRREG(evA, isCondStateCToCompState7, NULL, &CompState),
-	RKH_TRREG(evB, NULL, StateCToC1Ext8, &C1),
-	RKH_TRREG(evC, NULL, StateCToH1Ext9, &H1),
+RKH_CREATE_TRANS_TABLE(Example2_StateC)
+	RKH_TRREG(evA, isCondStateCToCompState7, NULL, &Example2_CompState),
+	RKH_TRREG(evB, NULL, StateCToC1Ext8, &Example2_C1),
+	RKH_TRREG(evC, NULL, StateCToH1Ext9, &Example2_H1),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(CompState)
-	RKH_TRREG(evB, NULL, CompStateToStateCExt10, &StateC),
-	RKH_TRREG(evC, NULL, NULL, &Example2_Final),
+RKH_CREATE_TRANS_TABLE(Example2_CompState)
+	RKH_TRREG(evB, NULL, CompStateToStateCExt10, &Example2_StateC),
+	RKH_TRREG(evC, NULL, NULL, &Example2Final),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(StateD)
-	RKH_TRREG(evA, NULL, NULL, &StateE),
+RKH_CREATE_TRANS_TABLE(Example2_StateD)
+	RKH_TRREG(evA, NULL, NULL, &Example2_StateE),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(StateE)
-	RKH_TRREG(evC, NULL, NULL, &H2),
-	RKH_TRREG(evA, NULL, StateEToCompState_FinalExt15, &CompState_Final),
+RKH_CREATE_TRANS_TABLE(Example2_StateE)
+	RKH_TRREG(evC, NULL, NULL, &Example2_H2),
+	RKH_TRREG(evA, NULL, StateEToCompStateFinalExt15, &Example2_CompStateFinal),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(StateF)
+RKH_CREATE_TRANS_TABLE(Example2_StateF)
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(StateG)
-	RKH_TRREG(evC, NULL, NULL, &StateF1),
+RKH_CREATE_TRANS_TABLE(Example2_StateG)
+	RKH_TRREG(evC, NULL, NULL, &Example2_StateF1),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(StateF1)
+RKH_CREATE_TRANS_TABLE(Example2_StateF1)
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(StateF11)
+RKH_CREATE_TRANS_TABLE(Example2_StateF11)
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(CompState2)
+RKH_CREATE_TRANS_TABLE(Example2_CompState2)
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_TRANS_TABLE(CompState21)
+RKH_CREATE_TRANS_TABLE(Example2_CompState21)
 	RKH_TRINT(evTout1, NULL, CompState21ToCompState21Loc6),
 RKH_END_TRANS_TABLE
 
-RKH_CREATE_CHOICE_STATE(C0);
-RKH_CREATE_CHOICE_STATE(C1);
+RKH_CREATE_CHOICE_STATE(Example2_C0);
+RKH_CREATE_CHOICE_STATE(Example2_C1);
 
-RKH_CREATE_BRANCH_TABLE(C0)
-	RKH_BRANCH(isCondC0ToStateC21, NULL, &StateC),
-	RKH_BRANCH(isCondC0ToC122, C0ToC1Ext22, &C1),
-	RKH_BRANCH(ELSE, NULL, &StateC),
+RKH_CREATE_BRANCH_TABLE(Example2_C0)
+	RKH_BRANCH(isCondC0ToStateC21, NULL, &Example2_StateC),
+	RKH_BRANCH(isCondC0ToC122, C0ToC1Ext22, &Example2_C1),
+	RKH_BRANCH(ELSE, NULL, &Example2_StateC),
 RKH_END_BRANCH_TABLE
 
-RKH_CREATE_BRANCH_TABLE(C1)
-	RKH_BRANCH(isCondC1ToCompState23, C1ToCompStateExt23, &CompState),
-	RKH_BRANCH(ELSE, C1ToStateAExt24, &StateA),
+RKH_CREATE_BRANCH_TABLE(Example2_C1)
+	RKH_BRANCH(isCondC1ToCompState23, C1ToCompStateExt23, &Example2_CompState),
+	RKH_BRANCH(ELSE, C1ToStateAExt24, &Example2_StateA),
 RKH_END_BRANCH_TABLE
 
-RKH_CREATE_FINAL_STATE(Example2_Final, RKH_NULL);
+RKH_CREATE_FINAL_STATE(Example2Final, RKH_NULL);
 
 /* ............................. Active object ............................. */
 struct Example2
@@ -168,7 +168,7 @@ struct Example2
     rbool_t uninitializedBoolVar;
 };
 
-RKH_SMA_CREATE(Example2, example2, 0, HCAL, &StateA, ToStateAExt0, NULL);
+RKH_SMA_CREATE(Example2, example2, 0, HCAL, &Example2_StateA, ToStateAExt0, NULL);
 RKH_SMA_DEF_PTR(example2);
 
 /* ------------------------------- Constants ------------------------------- */
@@ -181,7 +181,7 @@ static rInt foo = 0;
 /* ----------------------- Local function prototypes ----------------------- */
 /* ---------------------------- Local functions ---------------------------- */
 /* ............................ Effect actions ............................. */
-void 
+static void 
 ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar = 1;
@@ -191,18 +191,24 @@ ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 		
 	RKH_TR_FWK_AO(me);
 	RKH_TR_FWK_QUEUE(&RKH_UPCAST(RKH_SMA_T, me)->equeue);
-	RKH_TR_FWK_STATE(me, &StateA);
-	RKH_TR_FWK_STATE(me, &StateB);
-	RKH_TR_FWK_STATE(me, &StateC);
-	RKH_TR_FWK_STATE(me, &CompState);
-	RKH_TR_FWK_STATE(me, &StateD);
-	RKH_TR_FWK_STATE(me, &StateE);
-	RKH_TR_FWK_STATE(me, &StateF);
-	RKH_TR_FWK_STATE(me, &StateG);
-	RKH_TR_FWK_STATE(me, &StateF1);
-	RKH_TR_FWK_STATE(me, &StateF11);
-	RKH_TR_FWK_STATE(me, &CompState2);
-	RKH_TR_FWK_STATE(me, &CompState21);
+	RKH_TR_FWK_STATE(me, &Example2_StateA);
+	RKH_TR_FWK_STATE(me, &Example2_StateB);
+	RKH_TR_FWK_STATE(me, &Example2_StateC);
+	RKH_TR_FWK_STATE(me, &Example2_CompState);
+	RKH_TR_FWK_STATE(me, &Example2_StateD);
+	RKH_TR_FWK_STATE(me, &Example2_StateE);
+	RKH_TR_FWK_STATE(me, &Example2_StateF);
+	RKH_TR_FWK_STATE(me, &Example2_StateG);
+	RKH_TR_FWK_STATE(me, &Example2_StateF1);
+	RKH_TR_FWK_STATE(me, &Example2_StateF11);
+	RKH_TR_FWK_STATE(me, &Example2_CompState2);
+	RKH_TR_FWK_STATE(me, &Example2_CompState21);
+	RKH_TR_FWK_PSTATE(me, &Example2_H1);
+	RKH_TR_FWK_PSTATE(me, &Example2_H2);
+	RKH_TR_FWK_PSTATE(me, &Example2_C0);
+	RKH_TR_FWK_PSTATE(me, &Example2_C1);
+	RKH_TR_FWK_STATE(me, &Example2_CompStateFinal);
+	RKH_TR_FWK_STATE(me, &Example2Final);
 	RKH_TR_FWK_SIG(evA);
 	RKH_TR_FWK_SIG(evB);
 	RKH_TR_FWK_SIG(evC);
@@ -214,7 +220,7 @@ ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 		RKH_TR_FWK_OBJ_NAME(StateCToC1Ext8, "StateCToC1Ext8");
 		RKH_TR_FWK_OBJ_NAME(StateCToH1Ext9, "StateCToH1Ext9");
 		RKH_TR_FWK_OBJ_NAME(CompStateToStateCExt10, "CompStateToStateCExt10");
-		RKH_TR_FWK_OBJ_NAME(StateEToCompState_FinalExt15, "StateEToCompState_FinalExt15");
+		RKH_TR_FWK_OBJ_NAME(StateEToCompStateFinalExt15, "StateEToCompStateFinalExt15");
 		RKH_TR_FWK_OBJ_NAME(ToStateGExt17, "ToStateGExt17");
 		RKH_TR_FWK_OBJ_NAME(H2ToStateGExt18, "H2ToStateGExt18");
 		RKH_TR_FWK_OBJ_NAME(ToStateF11Ext19, "ToStateF11Ext19");
@@ -237,73 +243,73 @@ ToStateAExt0(Example2 *const me, RKH_EVT_T *pe)
 	simpleOp();
 }
 
-void 
+static void 
 StateBToStateCExt3(Example2 *const me, RKH_EVT_T *pe)
 {
 	simpleOp();
 }
 
-void 
+static void 
 StateCToC1Ext8(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->boolVar = false;
 }
 
-void 
+static void 
 StateCToH1Ext9(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->boolVar = true;
 }
 
-void 
+static void 
 CompStateToStateCExt10(Example2 *const me, RKH_EVT_T *pe)
 {
 	simpleOp();
 }
 
-void 
-StateEToCompState_FinalExt15(Example2 *const me, RKH_EVT_T *pe)
+static void 
+StateEToCompStateFinalExt15(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->boolVar = false;
 }
 
-void 
+static void 
 ToStateGExt17(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar = 8;
 }
 
-void 
+static void 
 H2ToStateGExt18(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar = 1;
 }
 
-void 
+static void 
 ToStateF11Ext19(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar = 16;
 }
 
-void 
+static void 
 C0ToC1Ext22(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->boolVar = true;
 }
 
-void 
+static void 
 C1ToCompStateExt23(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar++;
 }
 
-void 
+static void 
 C1ToStateAExt24(Example2 *const me, RKH_EVT_T *pe)
 {
 	me->intVar = 0;
 }
 
-void 
+static void 
 StateAToStateALoc2(Example2 *const me, RKH_EVT_T *pe)
 {
 	simpleOp();
@@ -311,20 +317,20 @@ StateAToStateALoc2(Example2 *const me, RKH_EVT_T *pe)
 	foo++;
 }
 
-void 
+static void 
 CompState21ToCompState21Loc6(Example2 *const me, RKH_EVT_T *pe)
 {
 	simpleOp();
 }
 
 /* ............................. Entry actions ............................. */
-void 
+static void 
 enStateA(Example2 *const me)
 {
 	me->boolVar = false;
 }
 
-void 
+static void 
 enStateB(Example2 *const me)
 {
 	RKH_SET_STATIC_EVENT(&me->tmEvtObj0, evTout0);
@@ -332,7 +338,7 @@ enStateB(Example2 *const me)
 	RKH_TMR_ONESHOT(&me->tmEvtObj0.tmr, RKH_UPCAST(RKH_SMA_T, me), WaitTime0);
 }
 
-void 
+static void 
 enStateC(Example2 *const me)
 {
 	me->intVar = opWithParamAndReturn(me->intVar);
@@ -340,13 +346,13 @@ enStateC(Example2 *const me)
 	opWithParams(me->intVar, me->boolVar);
 }
 
-void 
+static void 
 enCompState(Example2 *const me)
 {
 	me->intVar++;
 }
 
-void 
+static void 
 enCompState21(Example2 *const me)
 {
 	RKH_SET_STATIC_EVENT(&me->tmEvtObj1, evTout1);
@@ -355,54 +361,54 @@ enCompState21(Example2 *const me)
 }
 
 /* ............................. Exit actions .............................. */
-void 
+static void 
 exStateA(Example2 *const me)
 {
 	me->intVar = 2;
 }
 
-void 
+static void 
 exStateB(Example2 *const me)
 {
 	rkh_tmr_stop(&me->tmEvtObj0.tmr);
 }
 
-void 
+static void 
 exCompState(Example2 *const me)
 {
 	me->boolVar = true;
 }
 
-void 
+static void 
 exCompState21(Example2 *const me)
 {
 	rkh_tmr_stop(&me->tmEvtObj1.tmr);
 }
 
 /* ................................ Guards ................................. */
-rbool_t 
+static rbool_t 
 isCondStateCToCompState7(Example2 *const me, RKH_EVT_T *pe)
 {
 	return ((me->intVar == 5)) ? true : false;
 }
-
-rbool_t 
+	
+static rbool_t 
 isCondC0ToStateC21(Example2 *const me, RKH_EVT_T *pe)
 {
 	return ((me->intVar == 0)) ? true : false;
 }
-
-rbool_t 
+	
+static rbool_t 
 isCondC0ToC122(Example2 *const me, RKH_EVT_T *pe)
 {
 	return ((me->intVar == 1)) ? true : false;
 }
-
-rbool_t 
+	
+static rbool_t 
 isCondC1ToCompState23(Example2 *const me, RKH_EVT_T *pe)
 {
 	return ((me->boolVar == false)) ? true : false;
 }
-
+	
 /* ---------------------------- Global functions --------------------------- */
 /* ------------------------------ End of file ------------------------------ */

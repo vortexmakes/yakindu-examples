@@ -16,17 +16,7 @@ extern "C" {
 /* ........................ Declares active object ......................... */
 RKH_SMA_DCLR(seqDigSignal);
 
-/* ................... Declares states and pseudostates .................... */
-RKH_DCLR_BASIC_STATE Idle, Seq0, Seq1, Seq2, Seq3, Seq4, Seq5, Failure;
-
 /* ------------------------------- Data types ------------------------------ */
-/* ............................. Active object ............................. */
-typedef struct SeqDigSignal SeqDigSignal;
-struct SeqDigSignal
-{
-    RKH_SMA_T sma;      /* base structure */
-};
-
 /* -------------------------- External variables --------------------------- */
 /* -------------------------- Function prototypes -------------------------- */
 /* -------------------- External C language linkage end -------------------- */
