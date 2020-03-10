@@ -154,6 +154,7 @@ RKH_CREATE_BRANCH_TABLE(Example2_C1)
 	RKH_BRANCH(ELSE, C1ToStateAExt24, &Example2_StateA),
 RKH_END_BRANCH_TABLE
 
+RKH_CREATE_FINAL_STATE(Example2_CompStateFinal, RKH_NULL);
 RKH_CREATE_FINAL_STATE(Example2Final, RKH_NULL);
 
 /* ............................. Active object ............................. */
